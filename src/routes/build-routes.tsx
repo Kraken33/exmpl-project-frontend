@@ -1,6 +1,7 @@
-import { Layouts } from "layouts";
 import React from "react";
 import { Route } from "react-router-dom";
+
+import { Layouts } from "layouts";
 
 import { Routes } from "./types";
 

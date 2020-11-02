@@ -20,3 +20,6 @@ export interface IPagesTree {
 export type Routes = {
   [key in keyof IPagesTree]: IRoute;
 };
+
+export interface PreparedRoutesForBreadcrumbs
+  extends Pick<IRoute, "path" | "breadcrumb"> {}

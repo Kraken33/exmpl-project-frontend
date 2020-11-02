@@ -6,7 +6,7 @@ import { Routes } from "./types";
 const routes: Routes = {
   home: {
     path: `/`,
-    layout: ELayouts.EmptyLayout,
+    layout: ELayouts.BaseLayout,
     page: pages.home,
     get breadcrumb() {
       return "Home";

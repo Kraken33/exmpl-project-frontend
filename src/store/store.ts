@@ -13,7 +13,7 @@ const sagaMiddleware = createSagaMiddleware();
 const INITIAL_STATE = window.__INITIAL_STATE__ || {};
 const configureStore: (preloadedState?: {
     [k: string]: any;
-}) => Store<IStoreState> = (preloadedState = INITIAL_STATE) => {
+}) => Store<any> = (preloadedState = INITIAL_STATE) => {
     const store = createStore(
         createRootReducer(history),
         preloadedState,
