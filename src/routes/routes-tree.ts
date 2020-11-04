@@ -1,4 +1,4 @@
-import { ELayouts } from "layouts";
+// import { BaseLayoutContainer } from "layouts/base/container";
 
 import { pages } from "./pages";
 import { Routes } from "./types";
@@ -6,7 +6,7 @@ import { Routes } from "./types";
 const routes: Routes = {
   home: {
     path: `/`,
-    layout: ELayouts.EmptyLayout,
+    layout: "BaseLayout",
     page: pages.home,
     get breadcrumb() {
       return "Home";

@@ -1,0 +1,19 @@
+.logo {
+    height: 60px;
+    padding-top: $sp_md;
+    text-align: center;
+    overflow: hidden;
+    &__img {
+        width: 40px;
+        height: 50px;
+    }
+    &__link {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        color: $white;
+    }
+}
+
+.breadcrumbs {
+    margin-top: $sp_md;
+}

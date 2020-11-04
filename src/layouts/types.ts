@@ -1,6 +1,9 @@
 import React from "react";
 
-import { ELayouts } from "./index";
+enum ELayouts {
+  "EmptyLayout" = "EmptyLayout",
+  "BaseLayout" = "BaseLayout"
+}
 
 export type LayoutsType = {
   [routeName in keyof typeof ELayouts]: React.ComponentType;

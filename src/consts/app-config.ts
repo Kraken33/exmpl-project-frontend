@@ -1,8 +1,4 @@
-const APP_NAME = 'App Name';
+const APP_NAME = "exmpl front-end";
+const BASE_API_URL = "/";
 
-const BASE_API_URL = '/';
-
-export {
-  APP_NAME,
-  BASE_API_URL
-};
+export { APP_NAME, BASE_API_URL };
