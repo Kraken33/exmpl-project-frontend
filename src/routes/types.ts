@@ -5,7 +5,7 @@ export type Breadcrumb = null | string | React.ReactNode;
 
 export interface IRoute {
   path: string;
-  layout: keyof LayoutsType;
+  layout: string;
   page: any;
   breadcrumb: Breadcrumb;
   icon?: string;

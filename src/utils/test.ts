@@ -1,5 +1,3 @@
-const rndResult = ():any=>Date.now();
+const rndResult = (): any => Date.now();
 
-export {
-    rndResult
-}
+export { rndResult };

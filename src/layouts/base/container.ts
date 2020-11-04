@@ -19,6 +19,7 @@ const wrapper = compose<BaseLayout, any>(
     connect(mapState2Props, mapDispatch2Props)
 );
 
+
 const BaseLayoutContainer = wrapper(BaseLayoutComponent);
 
 export { BaseLayoutContainer };

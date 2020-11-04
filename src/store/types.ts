@@ -2,7 +2,7 @@ import { RouterState as IRouterState } from "connected-react-router";
 import { FormStateMap as IFormStateMap } from "redux-form";
 
 import { IStore as IStoreHome } from "./home/types";
-import { LayoutStore } from './layout/types';
+import { LayoutStore } from "./layout/types";
 
 export interface IStoreState {
   router: IRouterState;

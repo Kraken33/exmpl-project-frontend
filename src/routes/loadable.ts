@@ -2,7 +2,12 @@ import loadableComponent from "@loadable/component";
 import pMinDelay from "p-min-delay";
 import React from "react";
 
-const _cache: { [k: string]: undefined | { fallback: React.ComponentType | Function } | boolean } = {};
+const _cache: {
+  [k: string]:
+    | undefined
+    | { fallback: React.ComponentType | Function }
+    | boolean;
+} = {};
 
 export const loadable = (
   cacheId: string,
