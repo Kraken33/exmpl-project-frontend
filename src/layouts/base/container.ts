@@ -5,10 +5,12 @@ import { BaseLayoutComponent } from "./view";
 import { getLayoutConfig, getSiderState } from "store/layout/selectors";
 import { siderToggleState } from 'store/layout/actions';
 import { MapState2Props, BaseLayout } from "./types";
+import { getLocationPathname } from "store/selectors";
 
 const mapState2Props: MapState2Props = (state)=>({
     layoutConfig: getLayoutConfig(state),
-    siderIsOpen: getSiderState(state)
+    siderIsOpen: getSiderState(state),
+    pathname: getLocationPathname(state)
 });
 
 const mapDispatch2Props = {

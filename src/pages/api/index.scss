@@ -1,0 +1,15 @@
+$width: 500px;
+
+.api {
+    width: $width;
+    margin: 0 auto;
+    &-methods {
+        width: 100%;
+    }
+    &-request {
+        width: 100%;
+    }
+    &-submit {
+        width: 100%;
+    }
+}

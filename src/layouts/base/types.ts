@@ -7,6 +7,7 @@ import { siderToggleState } from 'store/layout/actions';
 interface MapState2PropsFields {
     layoutConfig: Config;
     siderIsOpen: boolean;
+    pathname: string;
 };
 
 export type MapState2Props = (s: IStoreState)=>MapState2PropsFields;

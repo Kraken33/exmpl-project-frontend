@@ -15,6 +15,7 @@ export interface IRoute {
 
 export interface IPagesTree {
   home: React.ComponentType;
+  api: React.ComponentType;
 }
 
 export type Routes = {
