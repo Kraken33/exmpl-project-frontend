@@ -9,6 +9,7 @@ export const initialState: LayoutStore = {
   config: {
     menu: [
       {
+        link: '/',
         label: 'Home',
         icon: 'VerticalAlignTopOutlined'
       }

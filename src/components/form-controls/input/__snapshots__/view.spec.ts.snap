@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing input type form control match snapshot 1`] = `
+<Component
+  error={false}
+  label="Label"
+  required={false}
+  touched={false}
+  valid={true}
+>
+  <Input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+</Component>
+`;

@@ -6,7 +6,6 @@ import { history } from "routes/history";
 
 import { createRootReducer } from "./reducers";
 import { sagas } from "./sagas";
-import { IStoreState } from "./types";
 
 const composeEnhancers = composeWithDevTools({});
 const sagaMiddleware = createSagaMiddleware();

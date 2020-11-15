@@ -3,19 +3,42 @@
 import { pages } from "./pages";
 import { Routes } from "./types";
 
+export const Route = ({
+  path,
+  layout = "BaseLayout",
+  page,
+  breadcrumb,
+  link = () => path,
+  exact = true
+}: any): any =>
+  Object.assign(
+    {
+      path,
+      layout,
+      page,
+      exact,
+      link
+    },
+    typeof breadcrumb === "string"
+      ? {
+          get breadcrumb() {
+            return breadcrumb;
+          }
+        }
+      : { breadcrumb }
+  );
+
 const routes: Routes = {
-  home: {
-    path: `/`,
-    layout: "BaseLayout",
+  home: Route({
+    path: "/",
     page: pages.home,
-    get breadcrumb() {
-      return "Home";
-    },
-    link() {
-      return this.path;
-    },
-    exact: true
-  }
+    breadcrumb: "Home"
+  }),
+  api: Route({
+    path: "/api",
+    page: pages.api,
+    breadcrumb: "Api"
+  })
 };
 
 export { routes };

@@ -1,5 +1,5 @@
-import { IHomeApi } from "./home/types";
+import { ProfileApi } from "./profile/types";
 
 export interface IApi {
-  home: IHomeApi;
+  profile: ProfileApi;
 }

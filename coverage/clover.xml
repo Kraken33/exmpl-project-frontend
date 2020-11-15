@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1605443359659" clover="3.2.0">
+  <project timestamp="1605443359659" name="All files">
+    <metrics statements="22" coveredstatements="14" conditionals="2" coveredconditionals="0" methods="9" coveredmethods="6" elements="33" coveredelements="20" complexity="0" loc="22" ncloc="22" packages="1" files="1" classes="1"/>
+    <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/api/view.tsx">
+      <metrics statements="22" coveredstatements="14" conditionals="2" coveredconditionals="0" methods="9" coveredmethods="6"/>
+      <line num="20" count="4" type="stmt"/>
+      <line num="21" count="4" type="stmt"/>
+      <line num="23" count="4" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="34" count="1" type="stmt"/>
+      <line num="44" count="1" type="stmt"/>
+      <line num="46" count="2" type="stmt"/>
+      <line num="52" count="4" type="stmt"/>
+      <line num="56" count="2" type="stmt"/>
+      <line num="59" count="0" type="stmt"/>
+      <line num="66" count="2" type="stmt"/>
+      <line num="72" count="0" type="stmt"/>
+      <line num="76" count="1" type="stmt"/>
+      <line num="77" count="0" type="stmt"/>
+      <line num="78" count="0" type="stmt"/>
+      <line num="79" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="81" count="0" type="stmt"/>
+      <line num="88" count="0" type="stmt"/>
+      <line num="90" count="0" type="stmt"/>
+      <line num="95" count="1" type="stmt"/>
+      <line num="115" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

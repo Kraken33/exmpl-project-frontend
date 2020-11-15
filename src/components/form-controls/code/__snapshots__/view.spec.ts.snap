@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing code type form control match snapshot 1`] = `
+<Component
+  error={false}
+  label="Label"
+  required={false}
+  touched={false}
+  valid={true}
+>
+  <Controlled
+    onBeforeChange={[Function]}
+    options={
+      Object {
+        "lineNumbers": true,
+        "theme": "material",
+      }
+    }
+    value=""
+  />
+</Component>
+`;
