@@ -2,9 +2,9 @@ import { LayoutsType } from "layouts/types";
 import React from "react";
 
 enum ERoutes {
-  api = 'api',
-  home = 'home'
-};
+  api = "api",
+  home = "home"
+}
 
 export type Breadcrumb = null | string | React.ReactNode;
 
@@ -20,7 +20,7 @@ export interface IRoute {
 
 export type IPagesTree = {
   [k in keyof typeof ERoutes]: React.ComponentType;
-}
+};
 
 export type Routes = {
   [k in keyof typeof ERoutes]: IRoute;

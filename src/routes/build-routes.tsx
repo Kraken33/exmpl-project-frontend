@@ -1,8 +1,8 @@
+import { Layouts } from "layouts/consts";
 import React from "react";
 import { Route } from "react-router-dom";
 
 import { Routes } from "./types";
-import { Layouts } from 'layouts/consts';
 
 const buildRoutes = (routes: Routes): React.ReactNode => {
   const routeNames = Object.keys(routes) as Array<keyof Routes>;

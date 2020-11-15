@@ -1,8 +1,8 @@
+import { typeofNames } from "consts";
+import { Layouts } from "layouts/consts";
+
 import { pages } from "./pages";
 import { Routes } from "./types";
-import { Layouts } from 'layouts/consts';
-
-import { typeofNames } from 'consts';
 
 export const Route = ({
   path,

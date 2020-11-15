@@ -1,4 +1,4 @@
 export enum Layouts {
-    EmptyLayout = "EmptyLayout",
-    BaseLayout = "BaseLayout"
-  }
+  EmptyLayout = "EmptyLayout",
+  BaseLayout = "BaseLayout"
+}
