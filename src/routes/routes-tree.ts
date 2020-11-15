@@ -3,28 +3,41 @@
 import { pages } from "./pages";
 import { Routes } from "./types";
 
-export const Route = ({ path, layout = 'BaseLayout', page, breadcrumb, link=()=>path, exact=true }: any):any=>Object.assign({
+export const Route = ({
   path,
-  layout,
+  layout = "BaseLayout",
   page,
-  exact,
-  link
-}, typeof breadcrumb === 'string' ? {
-  get breadcrumb() {
-    return breadcrumb;
-  }
-} : { breadcrumb });
+  breadcrumb,
+  link = () => path,
+  exact = true
+}: any): any =>
+  Object.assign(
+    {
+      path,
+      layout,
+      page,
+      exact,
+      link
+    },
+    typeof breadcrumb === "string"
+      ? {
+          get breadcrumb() {
+            return breadcrumb;
+          }
+        }
+      : { breadcrumb }
+  );
 
 const routes: Routes = {
   home: Route({
-    path: '/',
+    path: "/",
     page: pages.home,
-    breadcrumb: "Home",
+    breadcrumb: "Home"
   }),
   api: Route({
-    path: '/api',
+    path: "/api",
     page: pages.api,
-    breadcrumb: "Api",
+    breadcrumb: "Api"
   })
 };
 
