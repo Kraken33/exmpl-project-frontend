@@ -1,13 +1,13 @@
-// import { Layouts } from "layouts";
 import React from "react";
 import { Route } from "react-router-dom";
 
 import { Routes } from "./types";
+import { Layouts } from 'layouts/consts';
 
 const buildRoutes = (routes: Routes): React.ReactNode => {
   const routeNames = Object.keys(routes) as Array<keyof Routes>;
   return routeNames.map(key => {
-    const { layout = "EmptyLayout", page: Page, ...rest } = routes[key];
+    const { layout = Layouts.EmptyLayout, page: Page, ...rest } = routes[key];
     const Layout = require("layouts")?.Layouts?.[layout];
 
     return (

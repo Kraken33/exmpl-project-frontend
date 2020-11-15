@@ -1,11 +1,12 @@
-// import { BaseLayoutContainer } from "layouts/base/container";
-
 import { pages } from "./pages";
 import { Routes } from "./types";
+import { Layouts } from 'layouts/consts';
+
+import { typeofNames } from 'consts';
 
 export const Route = ({
   path,
-  layout = "BaseLayout",
+  layout = Layouts.BaseLayout,
   page,
   breadcrumb,
   link = () => path,
@@ -19,7 +20,7 @@ export const Route = ({
       exact,
       link
     },
-    typeof breadcrumb === "string"
+    typeof breadcrumb === typeofNames.string
       ? {
           get breadcrumb() {
             return breadcrumb;
