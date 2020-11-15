@@ -1,7 +1,11 @@
 import React from "react";
 
-const HomeComponent: React.FC<unknown> = () => (
-  <div>React Typescript boilerplate</div>
-);
+import { useIntl } from 'services/intl';
+
+const HomeComponent: React.FC<unknown> = () => {
+  const { test } = useIntl();
+
+return <div>React Typescript boilerplate {test}</div>
+};
 
 export const View = HomeComponent;

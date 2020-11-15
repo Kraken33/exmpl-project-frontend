@@ -5,6 +5,7 @@ import { Storage } from "services/storage";
 import { IStoreState } from "store/types";
 
 export declare global {
+  type Nullable<T = any> = T | null;
   interface Window {
     // Your custom global property
     __INITIAL_STATE__: IStoreState;

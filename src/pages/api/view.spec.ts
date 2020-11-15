@@ -8,6 +8,7 @@ import { Component } from "./view";
 describe("testing api component", () => {
   const props: InnerProps = {
     routes: ["/route"],
+    intl: {}
   };
   const componentNode = r(Component, props);
   const wrapper = shallow(componentNode);
