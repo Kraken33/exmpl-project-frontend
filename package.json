@@ -117,7 +117,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run prettier && npm run lint",
-      "pre-push": "npm run test-no-interactive"
+      "pre-push": "npm run test:no-interactive"
     }
   },
   "importSort": {
