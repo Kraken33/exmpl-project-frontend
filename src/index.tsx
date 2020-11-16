@@ -9,15 +9,26 @@ import { ConnectedRouter as ConnectedRouterProvider } from 'connected-react-rout
 import { App } from 'components';
 import { store } from 'store';
 import { history } from 'routes/history';
+import { IntlProvider, intlSet, intlInit } from 'services/intl';
+
+setTimeout(()=>{ 
+  intlInit();
+}, 2000);
+
+setTimeout(()=>{
+  intlSet({ test: 'test', apiRequestPlaceholder: 'Placeholder', apiSubmitButtonLabel: 'Send', apiRequestDataTypeHeader: 'Header', apiRequestDataTypeJson: 'JSON' });
+}, 5000);
 
 const root = document.getElementById('root')! as HTMLElement;
 const render = (Component: React.ElementType, root: Element, done?: () => void) => {
   ReactDOM.render(
-      <ReduxProvider store={store}>
-        <ConnectedRouterProvider history={history}>
+    <ReduxProvider store={store}>
+      <ConnectedRouterProvider history={history}>
+        <IntlProvider>
           <Component />
-        </ConnectedRouterProvider>
-      </ReduxProvider>,
+        </IntlProvider>
+      </ConnectedRouterProvider>
+    </ReduxProvider>,
     root,
     done
   );

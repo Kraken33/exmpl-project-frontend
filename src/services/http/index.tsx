@@ -5,13 +5,13 @@ import axios, {
   AxiosResponse
 } from "axios";
 
-import { BASE_API_URL } from 'consts';
+import { BASE_API_URL, HTTP_CONTENT_TYPES } from 'consts';
 
 const http: AxiosInstance = axios.create({
   baseURL: BASE_API_URL,
   headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json",
+    "Content-Type": HTTP_CONTENT_TYPES.json,
+    Accept: HTTP_CONTENT_TYPES.json,
     "Admin-Panel": true
   }
 });

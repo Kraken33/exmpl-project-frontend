@@ -1,9 +1,4 @@
-export enum EMethods {
-  "POST" = "POST",
-  "GET" = "GET",
-  "PUT" = "PUT",
-  "DELETE" = "DELETE",
-}
+import { HTTP_METHODS } from 'consts';
 
 export enum EKeys {
   "method" = "method",
@@ -18,10 +13,10 @@ export enum ERequestDataType {
   "header" = "header",
 }
 
-export type Method = keyof typeof EMethods;
+export type Method = keyof typeof HTTP_METHODS;
 
 export interface State {
-  method: Method;
+  method: string;
   request: string;
   json: string;
   response: { [k: string]: any };
@@ -35,6 +30,7 @@ export type RequestDataTypes = Array<{
 
 export interface InnerProps {
   routes: string[];
+  intl: {[k: string]: string};
 }
 
 export type KeysUnion = Exclude<EKeys, EKeys.response>;

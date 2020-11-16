@@ -14,31 +14,39 @@ import { Controlled as CodeMirror } from "react-codemirror2";
 import ReactJson from "react-json-view";
 import { map } from 'lodash/fp';
 import { http } from 'services/http';
+import { EMPTY_STRING, HTTP_METHODS } from 'consts';
 
-import { State, EKeys, KeysUnion, RequestDataTypes, ERequestDataType, EMethods, InnerProps } from './types';
+import { State, EKeys, KeysUnion, RequestDataTypes, ERequestDataType, InnerProps } from './types';
 
 const { TreeNode } = TreeSelect;
 const { TabPane } = Tabs;
 
-const Component: React.FC<InnerProps> = ({ routes }) => {
-    const methods: Array<keyof typeof EMethods> = ["POST", "GET", "PUT", "DELETE"];
+const Component: React.FC<InnerProps> = ({ routes, intl }) => {
+    const methods: Array<keyof typeof HTTP_METHODS> = [HTTP_METHODS.POST, HTTP_METHODS.GET, HTTP_METHODS.PUT, HTTP_METHODS.DELETE];
 
     const [state, setState] = useState<State>({
         method: methods[0],
-        request: '',
-        json: '',
-        header: '',
+        request: EMPTY_STRING,
+        json: EMPTY_STRING,
+        header: EMPTY_STRING,
         response: {}
     });
+
+    const {
+        apiRequestPlaceholder,
+        apiSubmitButtonLabel,
+        apiRequestDataTypeJson,
+        apiRequestDataTypeHeader
+    } = intl;
 
     const requestDataTypes: RequestDataTypes = [
         {
             value: ERequestDataType.json,
-            label: 'JSON'
+            label: apiRequestDataTypeJson
         },
         {
             value: ERequestDataType.header,
-            label: 'Header'
+            label: apiRequestDataTypeHeader
         }
     ];
     const isSubmitted = state.request;
@@ -80,7 +88,7 @@ const Component: React.FC<InnerProps> = ({ routes }) => {
 
             const response = await http({
                 url: request,
-                method: method,
+                method: method as any,
                 params: json,
                 headers: header
             });
@@ -106,7 +114,7 @@ const Component: React.FC<InnerProps> = ({ routes }) => {
                             <TreeSelect
                                 showSearch
                                 dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-                                placeholder="Please select"
+                                placeholder={apiRequestPlaceholder}
                                 allowClear
                                 className="api-request"
                                 treeDefaultExpandAll
@@ -116,7 +124,7 @@ const Component: React.FC<InnerProps> = ({ routes }) => {
                             </TreeSelect>
                         </Col>
                         <Col span={4}>
-                            <Button className="api-submit" disabled={!isSubmitted} onClick={sendRequest}>Send</Button>
+                            <Button className="api-submit" disabled={!isSubmitted} onClick={sendRequest}>{apiSubmitButtonLabel}</Button>
                         </Col>
                     </Row>
                 </Col>
