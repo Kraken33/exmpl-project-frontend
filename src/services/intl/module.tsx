@@ -39,14 +39,16 @@ const addIntlState = (Component: React.ComponentType<InnerProps & OuterProps>): 
     return Wrapper;
 }
 
-const IntlProvider = addIntlState(({ children, pending, dictionary, pendingNode }) => {
+const IntlComponent: React.FC<InnerProps & OuterProps> = ({ children, pending, dictionary, pendingNode }) => {
     const showPreloader = pending && pendingNode;
 
     return <IntlContext.Provider value={dictionary as any}>
         {children}
         {showPreloader ? pendingNode : null}
     </IntlContext.Provider>;
-});
+};
+
+const IntlProvider = addIntlState(IntlComponent);
 
 const _intl = (target: Dictionary) => (key: string) => target ? target[key] : DEFAULT_PENDING_NODE;
 
@@ -68,4 +70,4 @@ const withIntl = (Component: React.ComponentType)=>(props: any)=>{
 
 const intl = _intl(intlDictionary);
 
-export { IntlProvider, intl, useIntl, withIntl }
+export { IntlProvider, intl, useIntl, withIntl, IntlComponent, addIntlState }

@@ -1,9 +1,11 @@
+import { error } from "./errors";
+
 interface Type {
   events: { [k: string]: Array<Function> };
-  on: (n: string, fn: Function)=>void;
-  off: (n: string, fn: Function)=>void;
-  emit: (n: string, data: any)=>void;
-  haveCurrentEvent: (en: string)=>boolean;
+  on: (n: string, fn: Function) => void;
+  off: (n: string, fn: Function) => void;
+  emit: (n: string, data: any) => void;
+  haveCurrentEvent: (en: string) => boolean;
 }
 
 const event: Type = {
@@ -16,23 +18,16 @@ const event: Type = {
     this.events[eventName].push(fn);
   },
   off: function(eventName, fn) {
-    const isCurrentFunction = (index: number)=>this.events[eventName][index] === fn;
-
-    if (this.haveCurrentEvent(eventName)) {
-      for (var i = 0; i < this.events[eventName].length; i++) {
-        if (isCurrentFunction(i)) {
-          this.events[eventName].splice(i, 1);
-          break;
-        }
-      }
-    }
+    const eventIndex = this.events[eventName].indexOf(fn);
+    this.haveCurrentEvent(eventName) && eventIndex >= 0
+      ? this.events[eventName].splice(eventIndex, 1)
+      : error(`This function is missing in ${eventName} event`);
   },
   emit: function(eventName, data) {
-    if (this.haveCurrentEvent(eventName)) {
+    this.haveCurrentEvent(eventName) &&
       this.events[eventName].forEach(function(fn) {
         fn(data);
       });
-    }
   },
 };
 

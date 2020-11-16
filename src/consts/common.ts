@@ -1,3 +1,3 @@
-const EMPTY_STRING = '';
+const EMPTY_STRING = "";
 
 export { EMPTY_STRING };

@@ -1,1 +1,1 @@
-export { Empty } from "./container";
+export { View as Empty } from "./view";
