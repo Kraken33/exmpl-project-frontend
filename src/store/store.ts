@@ -24,6 +24,6 @@ const configureStore: (preloadedState?: { [k: string]: any }) => Store<any> = (
 
 const store = configureStore();
 
-sagaMiddleware.run(sagas); 
+sagaMiddleware.run(sagas);
 
 export { store, history };

@@ -28,7 +28,7 @@ const event: Type = {
       this.events[eventName].forEach(function(fn) {
         fn(data);
       });
-  },
+  }
 };
 
 export { event };

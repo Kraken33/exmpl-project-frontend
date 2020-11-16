@@ -1,8 +1,9 @@
+import { NODE_ENV } from "consts";
+
 import { error } from "./errors";
-import { NODE_ENV } from 'consts';
 
 describe("testing error function", () => {
-    const errorExpression = 'Error';
+  const errorExpression = "Error";
 
   it("should call without error in production mode", () => {
     // @ts-ignore
