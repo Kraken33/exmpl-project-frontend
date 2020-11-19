@@ -1,4 +1,3 @@
-import { Spin } from "antd";
 import nanoid from "nanoid";
 
 import { loadable } from "./loadable";
@@ -8,7 +7,7 @@ const DynamicPage = (_import: any) => {
   return loadable(
     nanoid(),
     () => _import,
-    () => Spin
+    () => ()=>'...'
   );
 };
 
