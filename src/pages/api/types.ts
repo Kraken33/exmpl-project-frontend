@@ -1,4 +1,4 @@
-import { HTTP_METHODS } from 'consts';
+import { HttpMethods } from "consts";
 
 export enum EKeys {
   "method" = "method",
@@ -13,7 +13,7 @@ export enum ERequestDataType {
   "header" = "header",
 }
 
-export type Method = keyof typeof HTTP_METHODS;
+export type Method = keyof typeof HttpMethods;
 
 export interface State {
   method: string;
@@ -30,7 +30,7 @@ export type RequestDataTypes = Array<{
 
 export interface InnerProps {
   routes: string[];
-  intl: {[k: string]: string};
+  intl: { [k: string]: string };
 }
 
 export type KeysUnion = Exclude<EKeys, EKeys.response>;

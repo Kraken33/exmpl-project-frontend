@@ -1,1 +1,1 @@
-export { BaseLayoutContainer as default } from './container';
+export { BaseLayoutContainer as BaseLayout } from "./container";

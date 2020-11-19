@@ -1,26 +1,25 @@
-import { compose } from "recompose";
 import { connect } from "react-redux";
-
-import { BaseLayoutComponent } from "./view";
+import { compose } from "recompose";
+import { siderToggleState } from "store/layout/actions";
 import { getLayoutConfig, getSiderState } from "store/layout/selectors";
-import { siderToggleState } from 'store/layout/actions';
-import { MapState2Props, BaseLayout } from "./types";
 import { getLocationPathname } from "store/selectors";
 
-const mapState2Props: MapState2Props = (state)=>({
-    layoutConfig: getLayoutConfig(state),
-    siderIsOpen: getSiderState(state),
-    pathname: getLocationPathname(state)
+import { BaseLayout, MapState2Props } from "./types";
+import { BaseLayoutComponent } from "./view";
+
+const mapState2Props: MapState2Props = (state) => ({
+  layoutConfig: getLayoutConfig(state),
+  siderIsOpen: getSiderState(state),
+  pathname: getLocationPathname(state),
 });
 
 const mapDispatch2Props = {
-    siderToggleState
+  siderToggleState,
 };
 
 const wrapper = compose<BaseLayout, any>(
-    connect(mapState2Props, mapDispatch2Props)
+  connect(mapState2Props, mapDispatch2Props)
 );
-
 
 const BaseLayoutContainer = wrapper(BaseLayoutComponent);
 

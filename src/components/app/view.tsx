@@ -1,17 +1,14 @@
-import React, { Fragment } from "react";
+import { APP_NAME } from "consts";
+import React from "react";
 import Helmet from "react-helmet";
 import { RoutesSwitch } from "routes";
 
-import { IProps } from "./types";
-
-import { APP_NAME } from "consts";
-
-const View: React.FC<IProps> = () => {
+const View: React.FC = () => {
   return (
-    <Fragment>
+    <>
       <Helmet defaultTitle={`${APP_NAME}`} titleTemplate={`%s | ${APP_NAME}`} />
       <RoutesSwitch />
-    </Fragment>
+    </>
   );
 };
 

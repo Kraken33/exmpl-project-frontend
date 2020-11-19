@@ -8,7 +8,7 @@ const View: React.FC<BreadcrumbComponent> = ({ breadcrumbs }) => {
   const isLast = (index: number) => breadcrumbs.length - 1 !== index;
 
   return (
-    <Breadcrumb className={"breadcrumbs"}>
+    <Breadcrumb className="breadcrumbs">
       {breadcrumbs?.map(({ breadcrumb, match }, index) => {
         return (
           <Breadcrumb.Item key={breadcrumb.key}>

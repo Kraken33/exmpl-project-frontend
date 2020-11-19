@@ -1,17 +1,19 @@
-import { FormItemProps } from 'antd/lib/form';
+import { FControlInput } from "../input/types";
 
-export enum ETypes {
-    'input' = 'input',
-    'switch' = 'switch',
-    'code' = 'code'
-};
-
-export type Types = keyof typeof ETypes;
-
-export interface Dictionary {
-    [k: string]: any;
+export enum FormControlTypes {
+  input = "input",
+  switch = "switch",
+  code = "code",
+  password = "password",
 }
 
+export type Types = keyof typeof FormControlTypes;
+
+export type Dictionary = {
+  [k in FormControlTypes]: any;
+};
+
 export type Control = {
-    type: Types;
-} & FormItemProps;
+  type: Types;
+} & FControlInput &
+  any;

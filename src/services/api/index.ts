@@ -2,8 +2,8 @@ import { profile } from "./profile";
 import { IApi } from "./types";
 
 const api: IApi = {
-  profile
+  profile,
 };
 
 export { api };
-export { routes } from './routes';
+export { routes } from "./routes";

@@ -13,22 +13,22 @@ const event: Type = {
   haveCurrentEvent(eventName) {
     return !!this.events[eventName];
   },
-  on: function(eventName, fn) {
+  on(eventName, fn) {
     this.events[eventName] = this.events[eventName] || [];
     this.events[eventName].push(fn);
   },
-  off: function(eventName, fn) {
+  off(eventName, fn) {
     const eventIndex = this.events[eventName].indexOf(fn);
     this.haveCurrentEvent(eventName) && eventIndex >= 0
       ? this.events[eventName].splice(eventIndex, 1)
       : error(`This function is missing in ${eventName} event`);
   },
-  emit: function(eventName, data) {
+  emit(eventName, data) {
     this.haveCurrentEvent(eventName) &&
-      this.events[eventName].forEach(function(fn) {
+      this.events[eventName].forEach((fn) => {
         fn(data);
       });
-  }
+  },
 };
 
 export { event };

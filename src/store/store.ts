@@ -9,9 +9,9 @@ import { sagas } from "./sagas";
 
 const composeEnhancers = composeWithDevTools({});
 const sagaMiddleware = createSagaMiddleware();
-const INITIAL_STATE = window.__INITIAL_STATE__ || {};
+const initialState = window.initialState || {};
 const configureStore: (preloadedState?: { [k: string]: any }) => Store<any> = (
-  preloadedState = INITIAL_STATE
+  preloadedState: any = initialState
 ) => {
   const store = createStore(
     createRootReducer(history),

@@ -7,9 +7,9 @@ import dayjs from "dayjs";
 import { map } from "lodash/fp";
 import React from "react";
 import withBreadcrumbs from "react-router-breadcrumbs-hoc";
+import { history, routes } from "routes";
 
 import { BaseLayout } from "./types";
-import { routes, history } from "routes";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -31,7 +31,11 @@ const BaseLayoutComponent: React.FC<BaseLayout> = ({
     // @ts-ignore
     const Icon = icons[icon];
     return (
-      <Menu.Item key={link} icon={icon ? <Icon /> : null} onClick={()=>history.push(link)}>
+      <Menu.Item
+        key={link}
+        icon={icon ? <Icon /> : null}
+        onClick={() => history.push(link)}
+      >
         {label}
       </Menu.Item>
     );
@@ -42,13 +46,18 @@ const BaseLayoutComponent: React.FC<BaseLayout> = ({
       <Sider collapsible collapsed={siderIsOpen} onCollapse={siderToggleState}>
         <div className="logo">
           <img className="logo__img" src={logo} alt="Main logo" />
-          <a href={"/"} className="logo__link">
+          <a href="/" className="logo__link">
             Kraken 33
           </a>
         </div>
         <Menu theme="dark" defaultSelectedKeys={[pathname]} mode="inline">
           {renderMenu(menu)}
-          <Menu.Item danger key={routes.api.link()} icon={<icons.CloudDownloadOutlined />} onClick={()=>history.push(routes.api.link())}>
+          <Menu.Item
+            danger
+            key={routes.api.link()}
+            icon={<icons.CloudDownloadOutlined />}
+            onClick={() => history.push(routes.api.link())}
+          >
             API
           </Menu.Item>
         </Menu>

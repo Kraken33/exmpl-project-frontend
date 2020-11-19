@@ -1,19 +1,21 @@
+import { Spin } from "antd";
+import nanoid from "nanoid";
+
 import { loadable } from "./loadable";
 import { IPagesTree } from "./types";
 
-const { Spinner } = require("components");
-
-const RoutePage = (name: string, _import: any) => {
+const DynamicPage = (_import: any) => {
   return loadable(
-    "pages" + name,
+    nanoid(),
     () => _import,
-    () => Spinner
+    () => Spin
   );
 };
 
 const pages: IPagesTree = {
-  home: RoutePage("home", import("pages/home")),
-  api: RoutePage("api", import("pages/api"))
+  home: DynamicPage(import("pages/home")),
+  api: DynamicPage(import("pages/api")),
+  login: DynamicPage(import("pages/login")),
 };
 
 export { pages };

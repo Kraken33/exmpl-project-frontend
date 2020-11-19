@@ -1,25 +1,22 @@
+import { get } from "lodash/fp";
 import { createSelector } from "reselect";
-import { get } from 'lodash/fp';
 
 export const selectNames = {
-    layout: 'layout',
-    config: 'config',
-    siderIsOpen: 'siderIsOpen'
+  layout: "layout",
+  config: "config",
+  siderIsOpen: "siderIsOpen",
 };
 
 const getLayoutState = get(selectNames.layout);
 
 const getLayoutConfig = createSelector(
-    [getLayoutState],
-    get(selectNames.config)
+  [getLayoutState],
+  get(selectNames.config)
 );
 
 const getSiderState = createSelector(
-    [getLayoutState],
-    get(selectNames.siderIsOpen)
-)
+  [getLayoutState],
+  get(selectNames.siderIsOpen)
+);
 
-export {
-    getLayoutConfig,
-    getSiderState
-}; 
+export { getLayoutConfig, getSiderState };

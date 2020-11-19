@@ -1,37 +1,37 @@
-import { shallow } from 'enzyme';
-import { rProp } from 'utils/component-test';
+import { Breadcrumb } from "antd";
+import { shallow } from "enzyme";
+import { rProp } from "utils/component-test";
 
-import { View } from './view';
-import { BreadcrumbComponent } from './types';
-import { Breadcrumb } from 'antd';
+import { BreadcrumbComponent } from "./types";
+import { View } from "./view";
 
-describe('testing breadcrumb component', ()=>{
-const rComponent = rProp(View);
+describe("testing breadcrumb component", () => {
+  const rComponent = rProp(View);
 
-    it('should render without errors', ()=>{
-        const wrapper = shallow(rComponent({ breadcrumbs: null }));
+  it("should render without errors", () => {
+    const wrapper = shallow(rComponent({ breadcrumbs: null }));
 
-        expect(wrapper).toBeTruthy();
-    });
+    expect(wrapper).toBeTruthy();
+  });
 
-    it('should render all items', ()=>{
-        const props: BreadcrumbComponent = {
-            breadcrumbs: [
-                {
-                    breadcrumb: {
-                        key: '123',
-                        get() {
-                            return 'Breadcrumb'
-                        }
-                    },
-                    match: {
-                        url: 'https://'
-                    }
-                }
-            ]
-        };
-        const wrapper = shallow(rComponent(props));
+  it("should render all items", () => {
+    const props: BreadcrumbComponent = {
+      breadcrumbs: [
+        {
+          breadcrumb: {
+            key: "123",
+            get() {
+              return "Breadcrumb";
+            },
+          },
+          match: {
+            url: "https://",
+          },
+        },
+      ],
+    };
+    const wrapper = shallow(rComponent(props));
 
-        expect(wrapper.find(Breadcrumb.Item).length).toBeTruthy();
-    });
+    expect(wrapper.find(Breadcrumb.Item).length).toBeTruthy();
+  });
 });

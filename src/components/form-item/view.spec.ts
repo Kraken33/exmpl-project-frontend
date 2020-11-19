@@ -1,5 +1,4 @@
 import { shallow } from "enzyme";
-import React from "react";
 import { rProp } from "utils/component-test";
 
 import { FormItem } from "./types";
@@ -24,18 +23,18 @@ describe("testing form item component", () => {
   });
 
   it("should render error", () => {
-    const _props = {
+    const propsWithErrorProperties = {
       ...props,
       touched: true,
       valid: false,
       error: "Error",
     };
-    const wrapper = shallow(rComponent(_props));
+    const wrapper = shallow(rComponent(propsWithErrorProperties));
 
     expect(wrapper.props()).toEqual({
       label: props.label,
       validateStatus: "error",
-      help: _props.error,
+      help: propsWithErrorProperties.error,
       children: null,
     });
   });

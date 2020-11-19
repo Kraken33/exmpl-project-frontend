@@ -1,15 +1,15 @@
-import { values } from "lodash/fp";
-import { compose, withProps } from "recompose";
-import { routes } from "services/api";
+import { compose } from "recompose";
+import { reduxForm } from "redux-form";
 import { withIntl } from "services/intl";
 
+import { FormName } from "./consts";
 import { InnerProps } from "./types";
 import { Component } from "./view";
 
 const wrapper = compose<InnerProps, InnerProps>(
   withIntl,
-  withProps({
-    routes: values(routes),
+  reduxForm({
+    form: FormName,
   })
 );
 

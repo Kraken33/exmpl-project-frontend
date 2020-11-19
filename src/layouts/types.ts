@@ -2,7 +2,7 @@ import React from "react";
 
 enum ELayouts {
   "EmptyLayout" = "EmptyLayout",
-  "BaseLayout" = "BaseLayout"
+  "BaseLayout" = "BaseLayout",
 }
 
 export type LayoutsType = {

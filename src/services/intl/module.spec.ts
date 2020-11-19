@@ -18,8 +18,8 @@ jest.mock("react", () => {
 
 describe("testing intl module", () => {
   let useStateMock = jest.fn();
-  const hooksImplement = ()=>{
-      // @ts-ignore
+  const hooksImplement = () => {
+    // @ts-ignore
     useContext.mockImplementation(() => ({}));
     // @ts-ignore
     useMemo.mockImplementation((fn) => fn());
@@ -65,7 +65,6 @@ describe("testing intl module", () => {
   });
 
   describe("testing intl state HOC", () => {
-      
     it("should render without errors", () => {
       const wrapper = shallow(r(addIntlState(() => null)));
       expect(wrapper).toBeTruthy();
@@ -78,7 +77,7 @@ describe("testing intl module", () => {
     });
 
     it("should change state when call set trigger", () => {
-        const value = { test: 'test' };
+      const value = { test: "test" };
       shallow(r(addIntlState(() => null)));
       intlSet(value);
       expect(useStateMock).toBeCalledWith(value);

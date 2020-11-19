@@ -1,15 +1,15 @@
-import { LayoutsType } from "layouts/types";
 import React from "react";
 
 enum ERoutes {
   api = "api",
-  home = "home"
+  home = "home",
+  login = "login",
 }
 
 export type Breadcrumb = null | string | React.ReactNode;
 
-export interface IRoute {
-  path: string;
+export interface Route {
+  path: any;
   layout: string;
   page: any;
   breadcrumb: Breadcrumb;
@@ -23,8 +23,7 @@ export type IPagesTree = {
 };
 
 export type Routes = {
-  [k in keyof typeof ERoutes]: IRoute;
+  [k in keyof typeof ERoutes]: Route;
 };
 
-export interface PreparedRoutesForBreadcrumbs
-  extends Pick<IRoute, "path" | "breadcrumb"> {}
+export type PreparedRoutesForBreadcrumbs = Pick<Route, "path" | "breadcrumb">;

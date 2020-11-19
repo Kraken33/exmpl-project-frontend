@@ -1,27 +1,28 @@
-import { getLayoutConfig, getSiderState, selectNames } from './selectors';
-import { rndResult } from 'utils/test'; 
+import { rndResult } from "utils/test";
 
-describe('layout selectors', ()=>{
-    const payloads = {
-        [selectNames.config]: rndResult(),
-        [selectNames.siderIsOpen]: rndResult()
-    };
+import { getLayoutConfig, getSiderState, selectNames } from "./selectors";
 
-    const mockStore = {
-        [selectNames.layout]: {
-            [selectNames.config]: payloads[selectNames.config],
-            [selectNames.siderIsOpen]: payloads[selectNames.siderIsOpen]
-        }
-    }
-    it('invoke without errors::getLayoutConfig', ()=>{
-        const result = getLayoutConfig(mockStore);
+describe("layout selectors", () => {
+  const payloads = {
+    [selectNames.config]: rndResult(),
+    [selectNames.siderIsOpen]: rndResult(),
+  };
 
-        expect(result).toEqual(payloads[selectNames.config]);
-    });
+  const mockStore = {
+    [selectNames.layout]: {
+      [selectNames.config]: payloads[selectNames.config],
+      [selectNames.siderIsOpen]: payloads[selectNames.siderIsOpen],
+    },
+  };
+  it("invoke without errors::getLayoutConfig", () => {
+    const result = getLayoutConfig(mockStore);
 
-    it('invoke without errors::getSiderState', ()=>{
-        const result = getSiderState(mockStore);
-        
-        expect(result).toEqual(payloads[selectNames.siderIsOpen]);
-    });
+    expect(result).toEqual(payloads[selectNames.config]);
+  });
+
+  it("invoke without errors::getSiderState", () => {
+    const result = getSiderState(mockStore);
+
+    expect(result).toEqual(payloads[selectNames.siderIsOpen]);
+  });
 });

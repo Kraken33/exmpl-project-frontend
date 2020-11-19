@@ -1,18 +1,18 @@
-import { Route } from "./routes-tree";
+import { CreateRoute } from "./routes-tree";
 
 describe("testing route create fabric", () => {
   const arg = {
     path: "/",
     page: () => null,
-    breadcrumb: "Home"
+    breadcrumb: "Home",
   };
 
   it("should create route without errors", () => {
-    expect(Route(arg)).toBeTruthy();
+    expect(CreateRoute(arg)).toBeTruthy();
   });
 
   it("should create link function from path", () => {
-    const result = Route(arg);
+    const result = CreateRoute(arg);
     expect(result.link()).toEqual(arg.path);
   });
 });

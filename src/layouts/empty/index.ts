@@ -1,1 +1,1 @@
-export { View as Empty } from "./view";
+export { View as EmptyLayout } from "./view";

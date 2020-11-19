@@ -8,7 +8,7 @@ import { Component } from "./view";
 describe("testing api component", () => {
   const props: InnerProps = {
     routes: ["/route"],
-    intl: {}
+    intl: {},
   };
   const componentNode = r(Component, props);
   const wrapper = shallow(componentNode);
@@ -19,13 +19,6 @@ describe("testing api component", () => {
 
   it("should disable button if there is no request", () => {
     const buttonWrapper = wrapper.find(Button);
-
-    expect(buttonWrapper.props().disabled).toEqual(true);
-  });
-
-  it("should disable button if there is no request", () => {
-    const buttonWrapper = wrapper.find(Button);
-
     expect(buttonWrapper.props().disabled).toEqual(true);
   });
 });
