@@ -7,7 +7,7 @@ const DynamicPage = (_import: any) => {
   return loadable(
     nanoid(),
     () => _import,
-    () => ()=>'...'
+    () => () => "..."
   );
 };
 
