@@ -13,7 +13,7 @@ const RoutePage = (name: string, _import: any) => {
 
 const pages: IPagesTree = {
   home: RoutePage("home", import("pages/home")),
-  api: RoutePage("api", import("pages/api"))
+  api: RoutePage("api", import("pages/api")),
 };
 
 export { pages };

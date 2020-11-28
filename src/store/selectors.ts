@@ -4,7 +4,7 @@ import { createSelector } from "reselect";
 export const selectNames = {
   router: "router",
   location: "location",
-  pathname: "pathname"
+  pathname: "pathname",
 };
 
 const getRouterState = get(selectNames.router);

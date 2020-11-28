@@ -4,7 +4,7 @@ describe("testing route create fabric", () => {
   const arg = {
     path: "/",
     page: () => null,
-    breadcrumb: "Home"
+    breadcrumb: "Home",
   };
 
   it("should create route without errors", () => {

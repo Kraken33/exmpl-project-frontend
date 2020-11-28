@@ -70,7 +70,8 @@
     "eject": "react-scripts eject",
     "server": "serve -s build -l 4000",
     "lint": "eslint src/*/*.*",
-    "prettier": "prettier --write src/**/*.*"
+    "prettier": "prettier --write src/**/*.*",
+    "_docker:compiler": "APP_NAME=app; docker build -t $APP_NAME . --build-arg APP_NAME=$APP_NAME; docker run -d --name $APP_NAME -p 80:80 $APP_NAME"
   },
   "jest": {
     "snapshotSerializers": [
@@ -118,8 +119,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier && npm run lint",
-      "pre-push": "npm run test:no-interactive"
     }
   },
   "importSort": {

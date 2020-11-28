@@ -7,7 +7,7 @@ import * as reducers from "./export-reducers";
 const createRootReducer = (history: History) =>
   combineReducers({
     router: connectRouter(history),
-    ...reducers
+    ...reducers,
   });
 
 export { createRootReducer };

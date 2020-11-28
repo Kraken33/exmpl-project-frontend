@@ -3,7 +3,7 @@ import React from "react";
 
 enum ERoutes {
   api = "api",
-  home = "home"
+  home = "home",
 }
 
 export type Breadcrumb = null | string | React.ReactNode;
