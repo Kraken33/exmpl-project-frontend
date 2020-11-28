@@ -30,7 +30,7 @@ export const loadable = (
     _cache[cacheId]
       ? undefined
       : {
-          fallback: typeof x === "function" ? x() : x
+          fallback: typeof x === "function" ? x() : x,
         }
   );
 };

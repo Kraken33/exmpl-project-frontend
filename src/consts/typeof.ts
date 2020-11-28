@@ -1,5 +1,5 @@
 const typeofNames = {
-  string: "string"
+  string: "string",
 };
 
 export { typeofNames };

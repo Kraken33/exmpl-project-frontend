@@ -4,5 +4,5 @@ import { LayoutsType } from "./types";
 
 export const Layouts: LayoutsType = {
   EmptyLayout: EmptyLayout,
-  BaseLayout: BaseLayoutContainer
+  BaseLayout: BaseLayoutContainer,
 };

@@ -10,7 +10,7 @@ export const Route = ({
   page,
   breadcrumb,
   link = () => path,
-  exact = true
+  exact = true,
 }: any): any =>
   Object.assign(
     {
@@ -18,13 +18,13 @@ export const Route = ({
       layout,
       page,
       exact,
-      link
+      link,
     },
     typeof breadcrumb === typeofNames.string
       ? {
           get breadcrumb() {
             return breadcrumb;
-          }
+          },
         }
       : { breadcrumb }
   );
@@ -33,13 +33,13 @@ const routes: Routes = {
   home: Route({
     path: "/",
     page: pages.home,
-    breadcrumb: "Home"
+    breadcrumb: "Home",
   }),
   api: Route({
     path: "/api",
     page: pages.api,
-    breadcrumb: "Api"
-  })
+    breadcrumb: "Api",
+  }),
 };
 
 export { routes };
