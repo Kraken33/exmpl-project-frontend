@@ -5,6 +5,7 @@ export enum FormControlTypes {
   switch = "switch",
   code = "code",
   password = "password",
+  checkbox = "checkbox",
 }
 
 export type Types = keyof typeof FormControlTypes;

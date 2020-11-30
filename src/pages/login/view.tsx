@@ -1,48 +1,56 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Card, Checkbox, Form } from "antd";
+import { Button, Card, Form } from "antd";
 import logo from "assets/images/logo-dark.svg";
 import { FormControl, FormControlTypes } from "components/form-controls";
 import React from "react";
+import { Link } from "react-router-dom";
+import { AvailableRoutes } from "routes/consts";
+import { getLink } from "routes/router";
 
 import { FormItemNames } from "./consts";
 import styles from "./index.module.scss";
 import { InnerProps } from "./types";
 
-const Component: React.FC<InnerProps> = () => {
+const Component: React.FC<InnerProps> = ({
+  intl,
+  authenticate,
+  handleSubmit,
+}) => {
   return (
     <div className={styles.login}>
       <Card className={styles.login_container}>
         <div className={styles.login_logo}>
           <img src={logo} alt="logo" />
         </div>
-        <Form
-        //   onFinish={onFinish}
-        >
+        <Form onFinish={handleSubmit(authenticate)}>
           <FormControl
             name={FormItemNames.login}
             type={FormControlTypes.input}
             prefix={<UserOutlined />}
-            placeholder="Username"
+            placeholder={intl.loginLoginFieldPlaceholder}
           />
           <FormControl
             name={FormItemNames.password}
             type={FormControlTypes.password}
             prefix={<LockOutlined />}
-            placeholder="Password"
+            placeholder={intl.loginPasswordFieldPlaceholder}
           />
-          <Form.Item>
-            <Form.Item name="remember" valuePropName="checked" noStyle>
-              <Checkbox>Remember me</Checkbox>
-            </Form.Item>
-
-            <a href="/">Forgot password</a>
-          </Form.Item>
+          <FormControl
+            name={FormItemNames.remember}
+            type={FormControlTypes.checkbox}
+          >
+            {" "}
+            {intl.loginRememberMe}
+          </FormControl>
 
           <Form.Item>
             <Button type="primary" htmlType="submit">
-              Log in
+              {intl.loginButtonSubmit}
             </Button>
-            Or <a href="/">register now!</a>
+            <Link to={getLink(AvailableRoutes.home)}>
+              {" "}
+              {intl.loginRegistrNow}
+            </Link>
           </Form.Item>
         </Form>
       </Card>

@@ -1,7 +1,7 @@
-// import { all } from "redux-saga/effects";
+import { all } from "redux-saga/effects";
 
-// import * as allSagas from "./export-sagas";
+import * as allSagas from "./export-sagas";
 
 export function* sagas(): Generator {
-  // yield all(Object.values(allSagas).map(saga => saga()));
+  yield all(Object.values(allSagas).map((saga) => saga()));
 }

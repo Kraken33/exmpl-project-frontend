@@ -2,6 +2,7 @@ import React from "react";
 import { Field } from "redux-form";
 import { error } from "utils/errors";
 
+import { Checkbox } from "../checkbox";
 import { Code } from "../code";
 import { Input } from "../input";
 import { Switch } from "../switch";
@@ -14,6 +15,7 @@ const Component: React.FC<Control> = ({ type, ...props }) => {
       password: Input,
       switch: Switch,
       code: Code,
+      checkbox: Checkbox,
     };
     const currentFormElement = typesDictionary[componentTypeName];
 
