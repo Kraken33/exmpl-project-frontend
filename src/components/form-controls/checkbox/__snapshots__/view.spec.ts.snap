@@ -8,10 +8,10 @@ exports[`testing input type form control match snapshot 1`] = `
   touched={false}
   valid={true}
 >
-  <Input
+  <Checkbox
+    checked=""
+    indeterminate={false}
     onChange={[Function]}
-    type="text"
-    value=""
   />
 </Component>
 `;
