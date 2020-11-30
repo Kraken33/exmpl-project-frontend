@@ -9,7 +9,7 @@ describe("testing form controler", () => {
   const props = {
     type: FormControlTypes.input,
   };
-  const rComponent = rProp(Component);
+  const rComponent = rProp<any>(Component);
 
   it("should render without errors", () => {
     const wrapper = shallow(rComponent(props));

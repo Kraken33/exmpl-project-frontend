@@ -1,1 +1,1 @@
-export { BaseLayoutContainer as BaseLayout } from "./container";
+export { Container as BaseLayout } from "./container";

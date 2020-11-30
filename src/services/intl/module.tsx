@@ -59,8 +59,8 @@ const IntlComponent: React.FC<InnerProps & OuterProps> = ({
 
 const IntlProvider = addIntlState(IntlComponent);
 
-const intlSelector = (target: Dictionary) => (key: string) =>
-  target ? target[key] : DEFAULT_PENDING_NODE;
+const intlSelector = (target: Dictionary, options?: any) => (key: string) =>
+  target ? target[key] || key : options?.pendingNode || DEFAULT_PENDING_NODE;
 
 const useIntl = (conf: UseIntlConfig = {}): { [k: string]: string } => {
   const { pendingNode = DEFAULT_PENDING_NODE } = conf;
@@ -68,7 +68,11 @@ const useIntl = (conf: UseIntlConfig = {}): { [k: string]: string } => {
   const dictionary = useMemo(
     () =>
       new Proxy(intl || {}, {
-        get: (target: Dictionary | any, name) => target?.[name] || pendingNode,
+        get: (target: Dictionary | any, name: any) => {
+          return intlSelector(Object.keys(target).length ? target : null, {
+            pendingNode,
+          })(name);
+        },
       }),
     [intl, pendingNode]
   );

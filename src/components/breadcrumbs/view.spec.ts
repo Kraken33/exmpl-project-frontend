@@ -3,10 +3,10 @@ import { shallow } from "enzyme";
 import { rProp } from "utils/component-test";
 
 import { BreadcrumbComponent } from "./types";
-import { View } from "./view";
+import { Component } from "./view";
 
 describe("testing breadcrumb component", () => {
-  const rComponent = rProp(View);
+  const rComponent = rProp(Component);
 
   it("should render without errors", () => {
     const wrapper = shallow(rComponent({ breadcrumbs: null }));

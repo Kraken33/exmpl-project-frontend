@@ -1,50 +1,27 @@
-/* eslint @typescript-eslint/explicit-module-boundary-types: "off" */
-
-import { typeofNames } from "consts";
 import { Layouts } from "layouts/consts";
 
-import { pages } from "./pages";
-import { Route, Routes } from "./types";
+import { Routes } from "./types";
 
-export const CreateRoute = ({
-  path,
-  layout = Layouts.BaseLayout,
-  page,
-  breadcrumb,
-  link = () => path,
-  exact = true,
-}: Partial<Route>): Route => ({
-  path,
-  layout,
-  page,
-  exact,
-  link,
-  ...(typeof breadcrumb === typeofNames.string
-    ? {
-        get breadcrumb() {
-          return breadcrumb;
-        },
-      }
-    : { breadcrumb }),
-});
-
-const routes: Routes = {
-  home: CreateRoute({
+const routes: Routes = [
+  {
+    name: "home",
     path: "/",
-    page: pages.home,
-    breadcrumb: "Home",
-  }),
-  api: CreateRoute({
+    // breadcrumb: "Home",
+    page: import("pages/home"),
+  },
+  {
+    name: "api",
     path: "/api",
-    page: pages.api,
-    breadcrumb: "Api",
-  }),
-  login: CreateRoute({
+    // breadcrumb: "Api",
+    page: import("pages/api"),
+  },
+  {
+    name: "login",
     path: "/login",
-    page: pages.login,
     breadcrumb: "Login",
     layout: Layouts.EmptyLayout,
-  }),
-};
+    page: import("pages/login"),
+  },
+];
 
 export { routes };

@@ -5,7 +5,7 @@ import { getLayoutConfig, getSiderState } from "store/layout/selectors";
 import { getLocationPathname } from "store/selectors";
 
 import { BaseLayout, MapState2Props } from "./types";
-import { BaseLayoutComponent } from "./view";
+import { Component } from "./view";
 
 const mapState2Props: MapState2Props = (state) => ({
   layoutConfig: getLayoutConfig(state),
@@ -21,6 +21,6 @@ const wrapper = compose<BaseLayout, any>(
   connect(mapState2Props, mapDispatch2Props)
 );
 
-const BaseLayoutContainer = wrapper(BaseLayoutComponent);
+const Container = wrapper(Component);
 
-export { BaseLayoutContainer };
+export { Container };

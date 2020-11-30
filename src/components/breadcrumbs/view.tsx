@@ -1,14 +1,15 @@
 import { Breadcrumb } from "antd";
+import nanoid from "nanoid";
 import React from "react";
 import { Link } from "react-router-dom";
 
 import { BreadcrumbComponent } from "./types";
 
-const View: React.FC<BreadcrumbComponent> = ({ breadcrumbs }) => {
+const Component: React.FC<BreadcrumbComponent> = ({ breadcrumbs }) => {
   const isLast = (index: number) => breadcrumbs.length - 1 !== index;
 
   return (
-    <Breadcrumb className="breadcrumbs">
+    <Breadcrumb className="breadcrumbs" key={nanoid()}>
       {breadcrumbs?.map(({ breadcrumb, match }, index) => {
         return (
           <Breadcrumb.Item key={breadcrumb.key}>
@@ -24,4 +25,4 @@ const View: React.FC<BreadcrumbComponent> = ({ breadcrumbs }) => {
   );
 };
 
-export { View };
+export { Component };

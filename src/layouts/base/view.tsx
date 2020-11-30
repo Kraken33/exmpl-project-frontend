@@ -7,13 +7,14 @@ import dayjs from "dayjs";
 import { map } from "lodash/fp";
 import React from "react";
 import withBreadcrumbs from "react-router-breadcrumbs-hoc";
-import { history, routes } from "routes";
+import { history } from "routes";
+import * as router from "routes/router";
 
 import { BaseLayout } from "./types";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const BaseLayoutComponent: React.FC<BaseLayout> = ({
+const Component: React.FC<BaseLayout> = ({
   children,
   pathname,
   layoutConfig,
@@ -54,9 +55,9 @@ const BaseLayoutComponent: React.FC<BaseLayout> = ({
           {renderMenu(menu)}
           <Menu.Item
             danger
-            key={routes.api.link()}
+            key={router.getLink("api")}
             icon={<icons.CloudDownloadOutlined />}
-            onClick={() => history.push(routes.api.link())}
+            onClick={() => history.push(router.getLink("api"))}
           >
             API
           </Menu.Item>
@@ -76,4 +77,4 @@ const BaseLayoutComponent: React.FC<BaseLayout> = ({
   );
 };
 
-export { BaseLayoutComponent };
+export { Component };

@@ -16,7 +16,7 @@ setTimeout(() => {
 
 setTimeout(() => {
   intlSet({
-    test: "test",
+    // testKey: "test",
     apiRequestPlaceholder: "Placeholder",
     apiSubmitButtonLabel: "Send",
     apiRequestDataTypeHeader: "Header",

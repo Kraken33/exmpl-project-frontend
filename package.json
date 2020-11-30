@@ -77,7 +77,8 @@
     "eject": "react-scripts eject",
     "server": "serve -s build -l 4000",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
-    "prettier": "prettier --write src/**/*.ts{,x}"
+    "prettier": "prettier --write src/**/*.ts{,x}",
+    "_docker:compiler": "APP_NAME=app; docker build -t $APP_NAME . --build-arg APP_NAME=$APP_NAME; docker run -d --name $APP_NAME -p 80:80 $APP_NAME"
   },
   "jest": {
     "snapshotSerializers": [

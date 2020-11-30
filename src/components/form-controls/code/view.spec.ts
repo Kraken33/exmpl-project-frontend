@@ -6,7 +6,7 @@ import { FControlCode } from "./types";
 import { Component } from "./view";
 
 describe("testing code type form control", () => {
-  const rComponent = rProp(Component);
+  const rComponent = rProp<FControlCode>(Component);
 
   const props: FControlCode = {
     input: {
