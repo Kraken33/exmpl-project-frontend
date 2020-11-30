@@ -1,5 +1,4 @@
-import { curry } from "lodash/fp";
-import React, { ElementType } from "react";
+import React from "react";
 
 function r<T = any>(
   Comp: React.ComponentType<any> | React.FC<any>,
@@ -8,7 +7,7 @@ function r<T = any>(
   return <Comp {...props} />;
 }
 function rProp<T = any>(Comp: React.ComponentType<any> | React.FC<any>) {
-  return (props: T) => r(Comp, props);
+  return (props: T): JSX.Element => r(Comp, props);
 }
 
 export { r, rProp };

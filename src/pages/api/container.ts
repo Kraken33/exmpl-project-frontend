@@ -1,17 +1,15 @@
+import { values } from "lodash/fp";
 import { compose, withProps } from "recompose";
-import { values } from 'lodash/fp';
+import { routes } from "services/api";
+import { withIntl } from "services/intl";
 
+import { InnerProps } from "./types";
 import { Component } from "./view";
-import { routes } from 'services/api';
-
-import { InnerProps } from './types';
-import { withIntl } from 'services/intl';
-
 
 const wrapper = compose<InnerProps, InnerProps>(
   withIntl,
   withProps({
-    routes: values(routes)
+    routes: values(routes),
   })
 );
 

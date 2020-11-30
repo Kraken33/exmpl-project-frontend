@@ -3,13 +3,13 @@ $width: 500px;
 .api {
     width: $width;
     margin: 0 auto;
-    &-methods {
+    &_methods {
         width: 100%;
     }
-    &-request {
+    &_request {
         width: 100%;
     }
-    &-submit {
+    &_submit {
         width: 100%;
     }
 }

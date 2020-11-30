@@ -1,30 +1,24 @@
-import { LayoutsType } from "layouts/types";
 import React from "react";
 
-enum ERoutes {
+export enum ERoutes {
   api = "api",
   home = "home",
+  login = "login",
 }
 
 export type Breadcrumb = null | string | React.ReactNode;
 
-export interface IRoute {
-  path: string;
-  layout: string;
+export interface Route {
+  name: keyof typeof ERoutes;
+  path: any;
+  layout?: string;
   page: any;
-  breadcrumb: Breadcrumb;
+  breadcrumb?: Breadcrumb;
   icon?: string;
   exact?: boolean;
-  link(...args: any[]): string;
+  link?(...args: any[]): string;
 }
 
-export type IPagesTree = {
-  [k in keyof typeof ERoutes]: React.ComponentType;
-};
+export type Routes = Route[];
 
-export type Routes = {
-  [k in keyof typeof ERoutes]: IRoute;
-};
-
-export interface PreparedRoutesForBreadcrumbs
-  extends Pick<IRoute, "path" | "breadcrumb"> {}
+export type PreparedRoutesForBreadcrumbs = Pick<Route, "path" | "breadcrumb">;

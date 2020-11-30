@@ -1,18 +1,24 @@
-import React from 'react';
+import FormItem from "components/form-item";
+import React from "react";
 import { Controlled as CodeMirror } from "react-codemirror2";
 
-import { FControlCode } from './types';
+import { FControlCode } from "./types";
 
-import FormItem from 'components/form-item';
-
-const Component: React.FC<FControlCode> = ({ input, meta, type, label, required, ...attributes }) => {
+const Component: React.FC<FControlCode> = ({
+  input,
+  meta,
+  type,
+  label,
+  required,
+  ...attributes
+}) => {
   return (
     <FormItem required={required} label={label} {...meta}>
       <CodeMirror
         {...attributes}
         options={{
-          theme: 'material',
-          lineNumbers: true
+          theme: "material",
+          lineNumbers: true,
         }}
         value={input.value}
         onBeforeChange={(_, __, value) => {
@@ -21,6 +27,6 @@ const Component: React.FC<FControlCode> = ({ input, meta, type, label, required,
       />
     </FormItem>
   );
-}
+};
 
 export { Component };

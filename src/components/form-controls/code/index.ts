@@ -1,1 +1,1 @@
-export { Component as default } from './view';
+export { Component as Code } from "./view";

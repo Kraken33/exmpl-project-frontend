@@ -1,3 +1,3 @@
 export interface ProfileApi {
-  fetch: ()=>void;
+  fetch: () => void;
 }

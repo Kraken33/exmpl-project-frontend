@@ -1,26 +1,35 @@
-import 'assets/styles/app.css';
-import 'assets/styles/index.scss';
+import "assets/styles/app.css";
+import "assets/styles/index.scss";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider as ReduxProvider } from 'react-redux';
-import { ConnectedRouter as ConnectedRouterProvider } from 'connected-react-router';
+import { App } from "components";
+import { ConnectedRouter as ConnectedRouterProvider } from "connected-react-router";
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider as ReduxProvider } from "react-redux";
+import { history } from "routes/history";
+import { IntlProvider, intlInit, intlSet } from "services/intl";
+import { store } from "store";
 
-import { App } from 'components';
-import { store } from 'store';
-import { history } from 'routes/history';
-import { IntlProvider, intlSet, intlInit } from 'services/intl';
-
-setTimeout(()=>{ 
+setTimeout(() => {
   intlInit();
 }, 2000);
 
-setTimeout(()=>{
-  intlSet({ test: 'test', apiRequestPlaceholder: 'Placeholder', apiSubmitButtonLabel: 'Send', apiRequestDataTypeHeader: 'Header', apiRequestDataTypeJson: 'JSON' });
+setTimeout(() => {
+  intlSet({
+    // testKey: "test",
+    apiRequestPlaceholder: "Placeholder",
+    apiSubmitButtonLabel: "Send",
+    apiRequestDataTypeHeader: "Header",
+    apiRequestDataTypeJson: "JSON",
+  });
 }, 5000);
 
-const root = document.getElementById('root')! as HTMLElement;
-const render = (Component: React.ElementType, root: Element, done?: () => void) => {
+const rootElement = document.getElementById("root") as HTMLElement;
+const render = (
+  Component: React.ElementType,
+  root: Element,
+  done?: () => void
+) => {
   ReactDOM.render(
     <ReduxProvider store={store}>
       <ConnectedRouterProvider history={history}>
@@ -34,7 +43,7 @@ const render = (Component: React.ElementType, root: Element, done?: () => void) 
   );
 };
 
-render(App, root);
+render(App, rootElement);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

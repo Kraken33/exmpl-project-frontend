@@ -1,5 +1,5 @@
 const routes = {
-    profile: '/profile'
+  profile: "/profile",
 };
 
 export { routes };

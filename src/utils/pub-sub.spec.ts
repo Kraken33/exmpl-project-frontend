@@ -23,10 +23,6 @@ describe("testing pub-sub function", () => {
   });
 
   it("should throw error when event function is missing in event array", () => {
-    try {
-      event.off(eventName, () => {});
-    } catch (e) {
-      expect(e).toBeTruthy();
-    }
+    expect(() => event.off(eventName, () => {})).toThrow();
   });
 });

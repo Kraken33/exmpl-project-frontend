@@ -1,10 +1,11 @@
 import { connectRouter } from "connected-react-router";
 import { History } from "history";
-import { combineReducers } from "redux";
+import { Reducer, combineReducers } from "redux";
 
 import * as reducers from "./export-reducers";
+import { IStoreState } from "./types";
 
-const createRootReducer = (history: History) =>
+const createRootReducer = (history: History): Reducer<IStoreState> =>
   combineReducers({
     router: connectRouter(history),
     ...reducers,

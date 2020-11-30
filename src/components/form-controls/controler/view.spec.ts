@@ -1,25 +1,23 @@
-import { shallow } from 'enzyme';
-import { rProp } from 'utils/component-test';
+import { shallow } from "enzyme";
+import { rProp } from "utils/component-test";
 
-import { default as Input } from '../input';
+import { Input } from "../input";
+import { FormControlTypes } from "./types";
+import { Component } from "./view";
 
-import { Component } from './view';
-import { ETypes } from './types';
+describe("testing form controler", () => {
+  const props = {
+    type: FormControlTypes.input,
+  };
+  const rComponent = rProp<any>(Component);
 
-describe('testing form controler', ()=>{
-    const rComponent = rProp(Component);
+  it("should render without errors", () => {
+    const wrapper = shallow(rComponent(props));
+    expect(wrapper).toBeTruthy();
+  });
 
-    it('should render without errors', ()=>{
-        const wrapper = shallow(rComponent({}));
-
-        expect(wrapper).toBeTruthy();
-    });
-
-    it('should set right component type', ()=>{
-        const props = {
-            type: ETypes.input
-        };
-        const wrapper = shallow(rComponent(props));
-        expect(wrapper.props().component).toEqual(Input);
-    });
-})
+  it("should set right component type", () => {
+    const wrapper = shallow(rComponent(props));
+    expect(wrapper.props().component).toEqual(Input);
+  });
+});
