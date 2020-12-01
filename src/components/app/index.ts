@@ -1,1 +1,1 @@
-export { App } from "./container";
+export { Container as App } from "./container";

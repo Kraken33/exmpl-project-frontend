@@ -1,8 +1,13 @@
+import { EventEmitter } from "events";
+
 import React, { useContext, useEffect, useMemo, useState } from "react";
-import { event } from "utils/pub-sub";
 
 import { DEFAULT_PENDING_NODE, EVENTS } from "./consts";
 import { Dictionary, InnerProps, OuterProps, UseIntlConfig } from "./types";
+
+const createEvent = () => new EventEmitter();
+
+const intlEvent = createEvent();
 
 let intlDictionary: Dictionary = null;
 const IntlContext = React.createContext(intlDictionary);
@@ -26,12 +31,11 @@ const addIntlState = (
         setDictionary(null);
       };
 
-      event.on(EVENTS.intlInit, onDictionaryInit);
-      event.on(EVENTS.intlEnd, onDictionarySet);
+      intlEvent.on(EVENTS.intlInit, onDictionaryInit);
+      intlEvent.on(EVENTS.intlEnd, onDictionarySet);
 
       return () => {
-        event.off(EVENTS.intlInit, onDictionaryInit);
-        event.off(EVENTS.intlEnd, onDictionarySet);
+        intlEvent.removeAllListeners();
       };
     }, []);
 
@@ -59,8 +63,11 @@ const IntlComponent: React.FC<InnerProps & OuterProps> = ({
 
 const IntlProvider = addIntlState(IntlComponent);
 
-const intlSelector = (target: Dictionary, options?: any) => (key: string) =>
-  target ? target[key] || key : options?.pendingNode || DEFAULT_PENDING_NODE;
+const intlSelector = (target: Dictionary, options?: any) => (key: string) => {
+  return target
+    ? target[key] || key
+    : options?.pendingNode || DEFAULT_PENDING_NODE;
+};
 
 const useIntl = (conf: UseIntlConfig = {}): { [k: string]: string } => {
   const { pendingNode = DEFAULT_PENDING_NODE } = conf;
@@ -81,9 +88,11 @@ const useIntl = (conf: UseIntlConfig = {}): { [k: string]: string } => {
 };
 
 const withIntl = (
-  Component: React.ComponentType<
-    { [k: string]: any } & { intl: { [k: string]: string } }
-  >
+  Component:
+    | React.ComponentType<
+        { [k: string]: any } & { intl: { [k: string]: string } }
+      >
+    | React.FC
 ) => (props: { [k: string]: any }): React.ReactNode => {
   const intl = useIntl();
 
@@ -92,4 +101,12 @@ const withIntl = (
 
 const intl = intlSelector(intlDictionary);
 
-export { IntlProvider, intl, useIntl, withIntl, IntlComponent, addIntlState };
+export {
+  IntlProvider,
+  intl,
+  useIntl,
+  withIntl,
+  IntlComponent,
+  addIntlState,
+  intlEvent,
+};

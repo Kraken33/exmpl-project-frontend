@@ -2,6 +2,7 @@ import { FControlInput } from "../input/types";
 
 export enum FormControlTypes {
   input = "input",
+  textarea = "textarea",
   switch = "switch",
   code = "code",
   password = "password",

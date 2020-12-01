@@ -2,7 +2,7 @@ import { shallow } from "enzyme";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { r } from "utils/component-test";
 
-import { intlInit, intlSet } from "./actions";
+import { initIntl, setIntl } from "./actions";
 import { DEFAULT_PENDING_NODE } from "./consts";
 import { IntlComponent, addIntlState, useIntl } from "./module";
 
@@ -72,14 +72,14 @@ describe("testing intl module", () => {
 
     it("should change state when call init trigger", () => {
       shallow(r(addIntlState(() => null)));
-      intlInit();
+      initIntl();
       expect(useStateMock).toBeCalled();
     });
 
     it("should change state when call set trigger", () => {
       const value = { test: "test" };
       shallow(r(addIntlState(() => null)));
-      intlSet(value);
+      setIntl(value);
       expect(useStateMock).toBeCalledWith(value);
     });
   });

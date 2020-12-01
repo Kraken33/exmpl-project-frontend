@@ -7,21 +7,23 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider as ReduxProvider } from "react-redux";
 import { history } from "routes/history";
-import { IntlProvider, intlInit, intlSet } from "services/intl";
+import { IntlProvider, initIntl, setIntl } from "services/intl";
+import { PermissionProvider, setPermissions } from "services/permission";
 import { store } from "store";
 
 setTimeout(() => {
-  intlInit();
+  initIntl();
 }, 2000);
 
 setTimeout(() => {
-  intlSet({
-    // testKey: "test",
+  setIntl({
+    testKey: "test",
     apiRequestPlaceholder: "Placeholder",
     apiSubmitButtonLabel: "Send",
     apiRequestDataTypeHeader: "Header",
     apiRequestDataTypeJson: "JSON",
   });
+  setPermissions(["home"]);
 }, 5000);
 
 const rootElement = document.getElementById("root") as HTMLElement;
@@ -31,13 +33,15 @@ const render = (
   done?: () => void
 ) => {
   ReactDOM.render(
-    <ReduxProvider store={store}>
-      <ConnectedRouterProvider history={history}>
-        <IntlProvider>
-          <Component />
-        </IntlProvider>
-      </ConnectedRouterProvider>
-    </ReduxProvider>,
+    <PermissionProvider>
+      <IntlProvider>
+        <ReduxProvider store={store}>
+          <ConnectedRouterProvider history={history}>
+            <Component />
+          </ConnectedRouterProvider>
+        </ReduxProvider>
+      </IntlProvider>
+    </PermissionProvider>,
     root,
     done
   );

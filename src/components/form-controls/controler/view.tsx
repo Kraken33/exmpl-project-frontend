@@ -12,6 +12,7 @@ const Component: React.FC<Control> = ({ type, ...props }) => {
   const typeSwitcher = (componentTypeName: Types) => {
     const typesDictionary: Dictionary = {
       input: Input,
+      textarea: Input,
       password: Input,
       switch: Switch,
       code: Code,

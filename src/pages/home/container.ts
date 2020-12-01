@@ -1,3 +1,5 @@
-import { View } from "./view";
+import { Component } from "./view";
 
-export const HomeContainer = View;
+const Container = Component;
+
+export { Container };

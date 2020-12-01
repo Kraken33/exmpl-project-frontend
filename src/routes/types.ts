@@ -1,15 +1,11 @@
 import React from "react";
 
-export enum ERoutes {
-  api = "api",
-  home = "home",
-  login = "login",
-}
+import { AvailableRoutes } from "./consts";
 
 export type Breadcrumb = null | string | React.ReactNode;
 
 export interface Route {
-  name: keyof typeof ERoutes;
+  name: keyof typeof AvailableRoutes;
   path: any;
   layout?: string;
   page: any;
