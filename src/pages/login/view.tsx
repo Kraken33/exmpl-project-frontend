@@ -4,8 +4,7 @@ import logo from "assets/images/logo-dark.svg";
 import { FormControl, FormControlTypes } from "components/form-controls";
 import React from "react";
 import { Link } from "react-router-dom";
-import { AvailableRoutes } from "routes/consts";
-import { getLink } from "routes/router";
+import { AvailableRoutes, getLink } from "routes";
 
 import { FormItemNames } from "./consts";
 import styles from "./index.module.scss";

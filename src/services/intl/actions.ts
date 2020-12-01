@@ -1,9 +1,8 @@
-import { event } from "utils/pub-sub";
-
 import { EVENTS } from "./consts";
+import { intlEvent } from "./module";
 
-const intlInit = event.emit.bind(event, EVENTS.intlInit, null);
+const initIntl = (): boolean => intlEvent.emit(EVENTS.intlInit, null);
+const setIntl = (intl: { [k: string]: string }): boolean =>
+  intlEvent.emit(EVENTS.intlEnd, intl);
 
-const intlSet = event.emit.bind(event, EVENTS.intlEnd);
-
-export { intlInit, intlSet };
+export { initIntl, setIntl };

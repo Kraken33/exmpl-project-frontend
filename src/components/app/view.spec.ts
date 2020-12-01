@@ -1,10 +1,10 @@
 import { shallow } from "enzyme";
 import { r } from "utils/component-test";
 
-import { View } from "./view";
+import { Component } from "./view";
 
 describe("testing app component", () => {
-  const rComponent = r(View);
+  const rComponent = r(Component);
 
   it("should render without errors", () => {
     const wrapper = shallow(rComponent);

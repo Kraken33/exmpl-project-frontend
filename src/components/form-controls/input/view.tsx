@@ -2,6 +2,7 @@ import { Input } from "antd";
 import FormItem from "components/form-item";
 import React from "react";
 
+import { FormControlTypes } from "../controler/types";
 import { FControlInput } from "./types";
 
 const { TextArea } = Input;
@@ -16,10 +17,10 @@ const Component: React.FC<FControlInput> = ({
 }) => {
   return (
     <FormItem required={required} label={label} {...meta}>
-      {type === "textarea" ? (
-        <TextArea {...input} {...(attributes as any)} />
+      {type === FormControlTypes.textarea ? (
+        <TextArea {...input} {...attributes} />
       ) : (
-        <Input {...input} {...(attributes as any)} type={type} />
+        <Input {...input} {...attributes} type={type} />
       )}
     </FormItem>
   );

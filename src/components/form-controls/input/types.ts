@@ -1,6 +1,10 @@
 import { FormItemProps } from "antd/lib/form";
+import { InputProps, TextAreaProps } from "antd/lib/input";
 import { WrappedFieldProps } from "redux-form";
 
-export interface FControlInput extends FormItemProps, WrappedFieldProps {
-  type?: "input" | "textarea";
-}
+export type FControlInput = FormItemProps &
+  InputProps &
+  TextAreaProps &
+  WrappedFieldProps & {
+    type?: "input" | "textarea";
+  };

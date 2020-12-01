@@ -1,23 +1,15 @@
 import { Layouts } from "layouts/consts";
-import __ from "lodash/fp";
+import { assign, map } from "lodash/fp";
 import React from "react";
 import { Route } from "react-router-dom";
-import { Route as RouteType, Routes } from "routes/types";
-import { intl } from "services/intl";
+import { Route as RouteType } from "routes/types";
+import { withIntl } from "services/intl";
+import { withPermissions } from "services/permission/module";
 import { loadable } from "utils/loadable";
 
 import { AvailableRoutes } from "./consts";
 
 const routesShape: any = {};
-
-const buildBreadcrumb = (buildFn: Function) => ({
-  breadcrumb,
-  name,
-}: Pick<RouteType, "breadcrumb" | "name">) => breadcrumb || buildFn(name);
-
-const buildBreadcrumbWithIntl = buildBreadcrumb((name: string) =>
-  intl(`layoutBreadcrumb${name}`)
-);
 
 const dynamicPage = ({
   name,
@@ -31,7 +23,7 @@ const dynamicPage = ({
   );
 };
 
-const createRoute = ({
+const extendRoute = ({
   name,
   page,
   path,
@@ -47,40 +39,44 @@ const createRoute = ({
     page: dynamicPage({ name, require: page }),
     exact,
     link,
-    get breadcrumb() {
-      // @TODO Dont load translates
+    breadcrumb: withIntl(({ intl }: any) => {
+      const firstLatterToUpperCase = (str: string) => str[0].toUpperCase();
+      const wordWithoutFirstLetter = (str: string) => str.slice(1);
+      const breadcrumbKey: string = "layoutBreadcrumb".concat(
+        firstLatterToUpperCase(name),
+        wordWithoutFirstLetter(name)
+      );
 
-      return buildBreadcrumbWithIntl({ breadcrumb, name });
-    },
+      return <span>{breadcrumb || intl[breadcrumbKey]}</span>;
+    }),
   };
   routesShape[name] = route;
   return route;
 };
 
-const buildRoutes = __.map(createRoute);
+const addPermissionWrapper = (route: RouteType): RouteType =>
+  assign(route, { page: withPermissions(route.name)(route.page) });
 
-const buildRouter = (routes: Routes): React.ReactNode => {
-  return routes.map((route) => {
-    const { layout = Layouts.EmptyLayout, page: Page, ...rest } = route;
-    const Layout = require("layouts").Layouts[layout]; // eslint-disable-line @typescript-eslint/no-var-requires, global-require
+const buildRouter = map((route: RouteType, ...args: any) => {
+  const { layout = Layouts.EmptyLayout, page: Page, ...rest } = route;
+  const Layout = require("layouts").Layouts[layout]; // eslint-disable-line @typescript-eslint/no-var-requires, global-require
 
-    return (
-      <Route
-        key={rest.path}
-        render={(matchProps) => (
-          <Layout preparedRoutesForBreadcrumbs={routes}>
-            <Page {...matchProps} />
-          </Layout>
-        )}
-        {...rest}
-      />
-    );
-  });
-};
+  return (
+    <Route
+      key={route.path}
+      render={(matchProps) => (
+        <Layout preparedRoutesForBreadcrumbs={args[1]}>
+          <Page {...matchProps} />
+        </Layout>
+      )}
+      {...rest}
+    />
+  );
+});
 
 const getLink = (
   routeName: keyof typeof AvailableRoutes,
   ...args: any[]
 ): string => routesShape[routeName].link(...args);
 
-export { buildRouter, buildRoutes, getLink };
+export { buildRouter, extendRoute, getLink, addPermissionWrapper };

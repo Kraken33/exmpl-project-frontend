@@ -10,6 +10,7 @@ import withBreadcrumbs from "react-router-breadcrumbs-hoc";
 import { history } from "routes";
 import * as router from "routes/router";
 
+import styles from "./index.module.scss";
 import { BaseLayout } from "./types";
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -24,7 +25,7 @@ const Component: React.FC<BaseLayout> = ({
 }) => {
   const { menu } = layoutConfig;
 
-  const ReadyBreadcrumbs = withBreadcrumbs(preparedRoutesForBreadcrumbs, {
+  const ReadyBreadcrumbs = withBreadcrumbs([...preparedRoutesForBreadcrumbs], {
     excludePaths: [],
   })(Breadcrumbs as React.ComponentType<any>);
 
@@ -43,11 +44,11 @@ const Component: React.FC<BaseLayout> = ({
   });
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout className={styles.layout}>
       <Sider collapsible collapsed={siderIsOpen} onCollapse={siderToggleState}>
-        <div className="logo">
-          <img className="logo__img" src={logo} alt="Main logo" />
-          <a href="/" className="logo__link">
+        <div className={styles.logo}>
+          <img className={styles.logo_img} src={logo} alt="Main logo" />
+          <a href="/" className={styles.logo_link}>
             Kraken 33
           </a>
         </div>
@@ -63,13 +64,13 @@ const Component: React.FC<BaseLayout> = ({
           </Menu.Item>
         </Menu>
       </Sider>
-      <Layout className="site-layout">
+      <Layout>
         <Header />
-        <Content style={{ margin: "0 16px" }}>
+        <Content className={styles.content}>
           <ReadyBreadcrumbs />
-          <div className="site-layout-background">{children}</div>
+          <div className={styles.site_layout_background}>{children}</div>
         </Content>
-        <Footer style={{ textAlign: "center" }}>
+        <Footer className={styles.footer}>
           {APP_NAME} ©{dayjs().year()} Created by <a href="/">kraken33</a>
         </Footer>
       </Layout>

@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 import { Switch } from "react-router-dom";
 import { routers } from "routes";
 
-const View: React.FC = () => {
+const Component: React.FC = () => {
   return (
     <>
       <Helmet defaultTitle={`${APP_NAME}`} titleTemplate={`%s | ${APP_NAME}`} />
@@ -13,4 +13,4 @@ const View: React.FC = () => {
   );
 };
 
-export { View };
+export { Component };

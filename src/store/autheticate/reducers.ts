@@ -5,6 +5,7 @@ import { AuthenticateStore } from "./types";
 
 export const initialState: AuthenticateStore = {
   isAuthentificate: false,
+  permissions: ["home"],
   subject: null,
 };
 

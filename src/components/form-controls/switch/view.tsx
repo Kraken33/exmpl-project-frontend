@@ -7,7 +7,6 @@ import { FControlInput } from "./types";
 const Component: React.FC<FControlInput> = ({
   input,
   meta,
-  type,
   label,
   required,
   ...attributes
