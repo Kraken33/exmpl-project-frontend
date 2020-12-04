@@ -1,10 +1,12 @@
 import { connect } from "react-redux";
 import { compose } from "recompose";
 import { reduxForm } from "redux-form";
+import { api } from "services";
 import { withIntl } from "services/intl";
 import { actions } from "store/autheticate";
+import { asyncValidate } from "utils";
 
-import { FormName } from "./consts";
+import { FormItemNames, FormName } from "./consts";
 import { InnerProps } from "./types";
 import { Component } from "./view";
 
@@ -19,6 +21,11 @@ const wrapper = compose<InnerProps, InnerProps>(
   connect(null, mapDispatch2Props),
   reduxForm({
     form: FormName,
+    asyncBlurFields: Object.values(FormItemNames),
+    asyncValidate: asyncValidate({
+      formName: FormName,
+      apiHandler: api.authenticate.login,
+    }),
   })
 );
 

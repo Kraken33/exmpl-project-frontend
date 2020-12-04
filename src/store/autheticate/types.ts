@@ -1,8 +1,11 @@
+export type Credinatals = {
+  login: string;
+  password: string;
+};
+
 export interface AuthenticateStore {
-  isAuthentificate: boolean;
+  isAuthenticate: boolean;
   permissions: string[];
-  subject: Nullable<{
-    token: string;
-    role: string;
-  }>;
+  token: Nullable<string>;
+  role: Nullable<string>;
 }

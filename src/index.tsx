@@ -8,12 +8,12 @@ import ReactDOM from "react-dom";
 import { Provider as ReduxProvider } from "react-redux";
 import { history } from "routes/history";
 import { IntlProvider, initIntl, setIntl } from "services/intl";
-import { PermissionProvider, setPermissions } from "services/permission";
+import { PermissionProvider } from "services/permission";
 import { store } from "store";
 
 setTimeout(() => {
   initIntl();
-}, 2000);
+}, 0);
 
 setTimeout(() => {
   setIntl({
@@ -23,8 +23,8 @@ setTimeout(() => {
     apiRequestDataTypeHeader: "Header",
     apiRequestDataTypeJson: "JSON",
   });
-  setPermissions(["home"]);
-}, 5000);
+  // setPermissions(["home", "login"]);
+}, 0);
 
 const rootElement = document.getElementById("root") as HTMLElement;
 const render = (

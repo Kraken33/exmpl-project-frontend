@@ -1,8 +1,10 @@
-import { profile } from "./profile";
+import { account } from "./account";
+import { authenticate } from "./authenticate";
 import { IApi } from "./types";
 
 const api: IApi = {
-  profile,
+  account,
+  authenticate,
 };
 
 export { api };

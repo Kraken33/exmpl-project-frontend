@@ -1,5 +1,7 @@
 const routes = {
-  profile: "/profile",
+  account: () => "/account",
+  login: () => "/login",
+  signUp: () => "/signUp",
 };
 
 export { routes };

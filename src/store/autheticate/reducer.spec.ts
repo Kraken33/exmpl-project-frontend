@@ -11,6 +11,6 @@ describe("layout reducer", () => {
   it("should handle authenticateReceive", () => {
     const reducer = entryReducer(undefined, authenticateReceive({}));
 
-    expect(reducer.isAuthentificate).toEqual(true);
+    expect(reducer.isAuthenticate).toEqual(true);
   });
 });

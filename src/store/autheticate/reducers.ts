@@ -4,9 +4,10 @@ import { ETypes as types } from "./actions";
 import { AuthenticateStore } from "./types";
 
 export const initialState: AuthenticateStore = {
-  isAuthentificate: false,
+  isAuthenticate: false,
   permissions: ["home"],
-  subject: null,
+  role: null,
+  token: null,
 };
 
 export const entryReducer = createReducer(initialState, {
@@ -14,8 +15,10 @@ export const entryReducer = createReducer(initialState, {
     state: AuthenticateStore,
     { payload }: PayloadAction<any>
   ) => {
-    state.isAuthentificate = true;
-    state.subject = payload;
+    state.isAuthenticate = true;
+    state.token = payload.token;
+    state.permissions = payload.permissions;
+
     return state;
   },
 });

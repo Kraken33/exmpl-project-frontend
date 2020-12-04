@@ -18,6 +18,7 @@ const routes: Routes = [
     path: "/login",
     layout: Layouts.EmptyLayout,
     page: import("pages/login"),
+    isGuest: true,
   },
 ];
 

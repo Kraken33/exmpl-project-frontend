@@ -12,6 +12,7 @@ export interface Route {
   breadcrumb?: Breadcrumb;
   icon?: string;
   exact?: boolean;
+  isGuest?: boolean;
   link?(...args: any[]): string;
 }
 

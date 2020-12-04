@@ -176,8 +176,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier && npm run lint --no-verify",
-      "pre-push": "npm run test:no-interactive"
     }
   },
   "importSort": {

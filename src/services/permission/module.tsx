@@ -1,6 +1,9 @@
 import { EventEmitter } from "events";
 
 import React, { useContext, useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { AvailableRoutes } from "routes";
+import { redirect } from "utils";
 import { error } from "utils/errors";
 
 import { WithPerrmissionOptions } from "./types";
@@ -41,6 +44,18 @@ const PermissionProvider: React.FC = ({ children }) => {
 
 const usePermissions = (): string[] => useContext(PermissionContext);
 
+const withAuthentication = ({ authenticateSelector }: any) => (
+  Component: React.ComponentType<any>
+): any =>
+  connect((state: any) => ({ isAuthenticate: authenticateSelector(state) }))(
+    ({ isAuthenticate }) => {
+      useEffect(() => {
+        !isAuthenticate && redirect(AvailableRoutes.login);
+      }, []);
+      return isAuthenticate ? <Component /> : <span>401</span>;
+    }
+  );
+
 const withPermissions = (
   permissionName: string,
   options?: WithPerrmissionOptions
@@ -64,4 +79,5 @@ export {
   PermissionProvider,
   withPermissions,
   permissionEvent,
+  withAuthentication,
 };

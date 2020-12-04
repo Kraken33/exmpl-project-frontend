@@ -1,5 +1,7 @@
-import { ProfileApi } from "./profile/types";
+import { AcountApi } from "./account/types";
+import { AuthenticateApi } from "./authenticate/types";
 
 export interface IApi {
-  profile: ProfileApi;
+  account: AcountApi;
+  authenticate: AuthenticateApi;
 }

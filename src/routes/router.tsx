@@ -1,10 +1,14 @@
 import { Layouts } from "layouts/consts";
-import { assign, map } from "lodash/fp";
+import { assign, compose, map } from "lodash/fp";
 import React from "react";
 import { Route } from "react-router-dom";
 import { Route as RouteType } from "routes/types";
 import { withIntl } from "services/intl";
-import { withPermissions } from "services/permission/module";
+import {
+  withAuthentication,
+  withPermissions,
+} from "services/permission/module";
+import { isAuthenticate } from "store/autheticate/selectors";
 import { loadable } from "utils/loadable";
 
 import { AvailableRoutes } from "./consts";
@@ -31,6 +35,7 @@ const extendRoute = ({
   breadcrumb,
   link = () => path,
   exact = true,
+  isGuest,
 }: RouteType): RouteType => {
   const route = {
     name,
@@ -39,6 +44,7 @@ const extendRoute = ({
     page: dynamicPage({ name, require: page }),
     exact,
     link,
+    isGuest,
     breadcrumb: withIntl(({ intl }: any) => {
       const firstLatterToUpperCase = (str: string) => str[0].toUpperCase();
       const wordWithoutFirstLetter = (str: string) => str.slice(1);
@@ -55,7 +61,14 @@ const extendRoute = ({
 };
 
 const addPermissionWrapper = (route: RouteType): RouteType =>
-  assign(route, { page: withPermissions(route.name)(route.page) });
+  route.isGuest
+    ? route
+    : assign(route, {
+        page: compose(
+          withAuthentication({ authenticateSelector: isAuthenticate }),
+          withPermissions(route.name)
+        )(route.page),
+      });
 
 const buildRouter = map((route: RouteType, ...args: any) => {
   const { layout = Layouts.EmptyLayout, page: Page, ...rest } = route;
