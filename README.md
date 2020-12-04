@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Kraken33/exmpl-project-frontend.svg?branch=dev)](https://travis-ci.org/Kraken33/exmpl-project-frontend)
+
 ## Description
 
 React base boilerplate based on:
