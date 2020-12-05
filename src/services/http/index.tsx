@@ -1,12 +1,7 @@
-import axios, {
-  AxiosError,
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosResponse,
-} from "axios";
+import axios, { AxiosError, AxiosInstance, AxiosResponse } from "axios";
 import { BASE_API_URL, HTTP_CONTENT_TYPES } from "consts";
-import { store } from "store";
-import { IStoreState } from "store/types";
+
+import { requestInterceptor } from "./interceptor";
 
 const http: AxiosInstance = axios.create({
   baseURL: BASE_API_URL,
@@ -16,21 +11,6 @@ const http: AxiosInstance = axios.create({
     "Admin-Panel": true,
   },
 });
-
-const requestInterceptor = (config: AxiosRequestConfig) => {
-  const token = (store.getState() as IStoreState).authenticate.token;
-  const setToken2Header = (token: string) => {
-    config.headers["X-Token"] = token;
-  };
-  const setValidateOnly2Header = () => {
-    config.headers["X-Validate-Only"] = true;
-  };
-
-  token && setToken2Header(token);
-  config.data.validate && setValidateOnly2Header();
-
-  return config;
-};
 
 http.interceptors.request.use(requestInterceptor);
 

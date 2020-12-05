@@ -7,7 +7,7 @@ import { Component } from "./view";
 
 describe("testing api component", () => {
   const props: InnerProps = {
-    routes: ["/route"],
+    routes: [() => "/route"],
     intl: {},
   };
   const componentNode = r(Component, props);

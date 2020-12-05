@@ -1,9 +1,14 @@
 import { get } from "lodash/fp";
 import { createSelector } from "reselect";
 
-export const selectNames = {
+import { AvailableKeys } from "./types";
+
+export const selectNames: { [k in AvailableKeys]: AvailableKeys } = {
   authenticate: "authenticate",
   isAuthenticate: "isAuthenticate",
+  permissions: "permissions",
+  role: "role",
+  token: "token",
 };
 
 const getAuthenticateState = get(selectNames.authenticate);

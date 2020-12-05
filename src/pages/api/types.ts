@@ -29,7 +29,7 @@ export type RequestDataTypes = Array<{
 }>;
 
 export interface InnerProps {
-  routes: string[];
+  routes: Function[];
   intl: { [k: string]: string };
 }
 

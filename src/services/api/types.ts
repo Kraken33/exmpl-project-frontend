@@ -5,3 +5,7 @@ export interface IApi {
   account: AcountApi;
   authenticate: AuthenticateApi;
 }
+
+export type Routes = {
+  [k: string]: Function;
+};

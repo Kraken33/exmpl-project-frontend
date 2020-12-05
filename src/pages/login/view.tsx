@@ -1,10 +1,12 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Card, Form } from "antd";
+import { Card, Form } from "antd";
 import logo from "assets/images/logo-dark.svg";
+import { ButtonWait } from "components";
 import { FormControl, FormControlTypes } from "components/form-controls";
 import React from "react";
 import { Link } from "react-router-dom";
 import { AvailableRoutes, getLink } from "routes";
+import { actions } from "store/autheticate";
 
 import { FormItemNames } from "./consts";
 import styles from "./index.module.scss";
@@ -43,9 +45,13 @@ const Component: React.FC<InnerProps> = ({
           </FormControl>
 
           <Form.Item>
-            <Button type="primary" htmlType="submit">
+            <ButtonWait
+              on={actions.authenticate.type}
+              type="primary"
+              htmlType="submit"
+            >
               {intl.loginButtonSubmit}
-            </Button>
+            </ButtonWait>
             <Link to={getLink(AvailableRoutes.home)}>
               {" "}
               {intl.loginRegistrNow}

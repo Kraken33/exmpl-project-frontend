@@ -1,4 +1,4 @@
-export interface PreloaderStore<T = string> {
+export interface PreloaderStore {
   list: Array<string>;
 }
 

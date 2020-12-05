@@ -1,33 +1,30 @@
+import { cond, get, includes, isArray, negate, rearg, some } from "lodash/fp";
 import { createSelector } from "reselect";
+import { IStoreState } from "store/types";
 
-import { IStoreState } from "../types";
-import { PreloaderStore } from "./types";
-
-const getPreloaderState = (state: IStoreState): PreloaderStore =>
-  state.preloader;
-const preloaderNames = (
-  state: IStoreState,
-  preloaderNames: string | string[]
-): string[] => {
-  if (!Array.isArray(preloaderNames)) {
-    preloaderNames = [preloaderNames];
-  }
-  return preloaderNames;
+const selectNames = {
+  preloader: "preloader",
+  list: "list",
 };
 
-export const getPreloader = createSelector(
+const getPreloaderState = get(selectNames.preloader);
+
+const preloaderNames = rearg(
+  1,
+  cond([
+    [negate(isArray), (name) => [name]],
+    [isArray, (names) => names],
+  ])
+);
+
+const getPreloadersList = createSelector(
   [getPreloaderState],
-  (preloader: PreloaderStore): PreloaderStore => preloader
+  get(selectNames.list)
 );
 
-export const getPreloadersList = createSelector(
-  [getPreloader],
-  (preloaderState: PreloaderStore): any => preloaderState.list
-);
-
-export const hasPreloader = createSelector(
+const hasPreloader: (s: IStoreState, k: string) => boolean = createSelector(
   [getPreloadersList, preloaderNames],
-  (list, preloaderNames): boolean => {
-    return preloaderNames.some((name) => list.includes(name));
-  }
+  (list, names) => some((name) => includes(name)(list))(names)
 );
+
+export { selectNames, hasPreloader, getPreloadersList, preloaderNames };

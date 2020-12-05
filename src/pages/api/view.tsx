@@ -78,14 +78,16 @@ const Component: React.FC<InnerProps> = ({ routes, intl }) => {
 
   const sendRequest = async () => {
     try {
-      const { method, request, header } = state;
+      const { method, request } = state;
       const json = state.json ? JSON.parse(state.json) : {};
+      // @TODO Finish it (data в зависимости от метода и хедеры подключить)
 
       const response = await http({
         url: request,
         method: method as any,
         params: json,
-        headers: header,
+        data: json,
+        headers: {},
       });
 
       setState({ ...state, response });
@@ -129,8 +131,8 @@ const Component: React.FC<InnerProps> = ({ routes, intl }) => {
                 treeDefaultExpandAll
                 {...getStateProp(EKeys.request)}
               >
-                {routes.map((route: string) => (
-                  <TreeNode value={route} title={route} key={route} />
+                {routes.map((route: any) => (
+                  <TreeNode value={route()} title={route()} key={route()} />
                 ))}
               </TreeSelect>
             </Col>

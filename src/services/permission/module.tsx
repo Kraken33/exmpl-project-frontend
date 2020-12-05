@@ -6,7 +6,7 @@ import { AvailableRoutes } from "routes";
 import { redirect } from "utils";
 import { error } from "utils/errors";
 
-import { WithPerrmissionOptions } from "./types";
+import { WithAuthenticationOptions, WithPerrmissionOptions } from "./types";
 
 const createEvent = () => {
   const event: any = new EventEmitter();
@@ -44,14 +44,16 @@ const PermissionProvider: React.FC = ({ children }) => {
 
 const usePermissions = (): string[] => useContext(PermissionContext);
 
-const withAuthentication = ({ authenticateSelector }: any) => (
+const withAuthentication = ({
+  authenticateSelector,
+}: WithAuthenticationOptions) => (
   Component: React.ComponentType<any>
-): any =>
-  connect((state: any) => ({ isAuthenticate: authenticateSelector(state) }))(
+): React.ComponentType<any> =>
+  connect((state) => ({ isAuthenticate: authenticateSelector(state) }))(
     ({ isAuthenticate }) => {
       useEffect(() => {
         !isAuthenticate && redirect(AvailableRoutes.login);
-      }, []);
+      }, [isAuthenticate]);
       return isAuthenticate ? <Component /> : <span>401</span>;
     }
   );

@@ -124,6 +124,7 @@
       "@typescript-eslint/no-unused-expressions": "off",
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/no-shadow": "off",
       "react/jsx-props-no-spreading": "off",
       "func-names": "off",
       "no-param-reassign": "off",
@@ -176,6 +177,8 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test-no-interactive"
     }
   },
   "importSort": {

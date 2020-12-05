@@ -1,27 +1,27 @@
-import { set } from "lodash/fp";
+import { reduce, set } from "lodash/fp";
 import { FormState } from "redux-form";
 
 import { store } from "../store";
+import { error } from "./errors";
 
-const getFormValues = (formName: string) => {
+const getFormValues = (formName: string): { [k: string]: string } => {
   const form = store.getState().form[formName] as FormState;
   if (form) {
     const values = form.values || {};
     const fields = form.fields || {};
 
-    for (const field in fields) {
-      if (!fields.hasOwnProperty(field)) continue;
-      if (!(field in values)) {
-        values[field] = "";
-      }
-    }
-
-    return values;
+    return reduce<string, { [k: string]: any }>((acc, key) => {
+      acc[key] = values[key] || "";
+      return acc;
+    }, values)(Object.keys(fields));
   }
-  console.warn(
-    `Unknown from name \`${formName}\`. Please, provide correct form name`
-  );
+  error(`Unknown from name \`${formName}\`. Please, provide correct form name`);
   return {};
+};
+
+type ServerError = {
+  msg: string;
+  param: string;
 };
 
 const asyncValidate = ({
@@ -31,23 +31,25 @@ const asyncValidate = ({
 }: {
   apiHandler: Function;
   formName: string;
-  handler?: any;
+  handler?: Function;
 }) => async (): Promise<any> => {
-  let values: any = {
+  let values: { [k: string]: any } = {
     ...getFormValues(formName),
-  } as any;
+  };
+
   values.validate = true;
-  if (handler) values = handler(values);
-  const err: any = await apiHandler(values);
-  // eslint-disable-next-line no-shadow
-  const validateFormatter = (errors: any) =>
-    errors.reduce((acc: any, err: any) => {
+  values = handler ? handler(values) : values;
+  const data: { errors: ServerError[] } = await apiHandler(values);
+
+  const validateFormatter = (errors: ServerError[]) =>
+    errors.reduce((acc: { [k: string]: string }, err: ServerError) => {
       acc = set(err.param.replace(/\.(\d)\./, "[$1]"), err.msg)(acc);
       return acc;
     }, {});
-  const errValues = validateFormatter(err.errors);
-  console.log(err, errValues, "err.data.data");
+
+  const errValues = validateFormatter(data.errors);
+  // eslint-disable-next-line @typescript-eslint/no-throw-literal
   if (Object.keys(errValues).length) throw errValues;
 };
 
-export { asyncValidate };
+export { asyncValidate, getFormValues };
