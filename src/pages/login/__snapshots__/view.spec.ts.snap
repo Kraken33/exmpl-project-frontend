@@ -38,9 +38,7 @@ exports[`testing login page match snapshot 1`] = `
           on="@LOGIN/AUTHENTICATE_REQUEST"
           type="primary"
         />
-        <Link
-          to="/"
-        >
+        <Link>
            
         </Link>
       </FormItem>
