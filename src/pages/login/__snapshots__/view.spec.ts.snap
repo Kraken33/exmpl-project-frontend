@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing login page match snapshot 1`] = `
+<div
+  className="login"
+>
+  <Card
+    className="login_container"
+  >
+    <div
+      className="login_logo"
+    >
+      <img
+        alt="logo"
+        src="logo-dark.svg"
+      />
+    </div>
+    <ForwardRef(InternalForm)>
+      <Component
+        name="login"
+        prefix={<ForwardRef(UserOutlined) />}
+        type="input"
+      />
+      <Component
+        name="password"
+        prefix={<ForwardRef(LockOutlined) />}
+        type="password"
+      />
+      <Component
+        name="remember"
+        type="checkbox"
+      >
+         
+      </Component>
+      <FormItem>
+        <Connect(Component)
+          htmlType="submit"
+          on="@LOGIN/AUTHENTICATE_REQUEST"
+          type="primary"
+        />
+        <Link
+          to="/"
+        >
+           
+        </Link>
+      </FormItem>
+    </ForwardRef(InternalForm)>
+  </Card>
+</div>
+`;
