@@ -1,8 +1,3 @@
-jest.mock("services/permission", () => ({
-  withPermissions: (v: any) => v,
-  withAuthentication: (v: any) => v,
-}));
-
 jest.mock("layouts", () => ({
   Layouts: {},
 }));
