@@ -1,11 +1,12 @@
-import { AvailableRoutes, getLink } from "routes";
-import { history } from "store";
+import { AvailableRoutes } from "routes/consts";
+import { history } from "routes/history";
 
 const redirect = (
   routeName: keyof typeof AvailableRoutes,
   ...args: any[]
 ): void => {
-  history.push(getLink(routeName, ...args));
+  // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
+  history.push(require("routes").getLink(routeName, ...args));
 };
 
 export { redirect };

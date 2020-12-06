@@ -4,7 +4,12 @@ import React from "react";
 
 import { ButtonProps } from "./types";
 
-const Component: React.FC<ButtonProps> = ({ pending, children, ...rest }) => {
+const Component: React.FC<ButtonProps> = ({
+  pending,
+  children,
+  dispatch,
+  ...rest
+}) => {
   const props = {
     ...rest,
     ...(pending

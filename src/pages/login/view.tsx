@@ -6,7 +6,7 @@ import { FormControl, FormControlTypes } from "components/form-controls";
 import React from "react";
 import { Link } from "react-router-dom";
 import { AvailableRoutes, getLink } from "routes";
-import { actions } from "store/autheticate";
+import { authenticate as authenticateAction } from "store/autheticate/actions";
 
 import { FormItemNames } from "./consts";
 import styles from "./index.module.scss";
@@ -46,7 +46,7 @@ const Component: React.FC<InnerProps> = ({
 
           <Form.Item>
             <ButtonWait
-              on={actions.authenticate.type}
+              on={authenticateAction.type}
               type="primary"
               htmlType="submit"
             >

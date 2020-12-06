@@ -1,9 +1,9 @@
 import { RouterState as IRouterState } from "connected-react-router";
 import { FormStateMap as IFormStateMap } from "redux-form";
 
-import { AuthenticateStore } from "./autheticate/types";
-import { LayoutStore } from "./layout/types";
-import { PreloaderStore } from "./preloader/types";
+import { AuthenticateStore } from "./autheticate";
+import { LayoutStore } from "./layout";
+import { PreloaderStore } from "./preloader";
 
 export interface IStoreState {
   router: IRouterState;

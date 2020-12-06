@@ -7,7 +7,7 @@ export type Breadcrumb = null | string | React.ReactNode;
 export interface Route {
   name: keyof typeof AvailableRoutes;
   path: any;
-  layout?: string;
+  layout?: any;
   page: any;
   breadcrumb?: Breadcrumb;
   icon?: string;

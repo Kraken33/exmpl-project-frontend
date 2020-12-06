@@ -1,5 +1,3 @@
-import * as actions from "./actions";
-import * as types from "./types";
-
-export { types, actions };
+export { addPreloader, removePreloader } from "./actions";
+export * from "./types";
 export { entryReducer } from "./reducers";

@@ -22,30 +22,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,55 +94,55 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { routerMiddleware } from "connected-react-router";
 import { Store, applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
 import createSagaMiddleware from "redux-saga";
-import { history } from "routes/history";
+import { history } from "routes";
 &nbsp;
 import { createRootReducer } from "./reducers";
 import { sagas } from "./sagas";
 &nbsp;
-const composeEnhancers = <span class="cstat-no" title="statement not covered" >composeWithDevTools({});</span>
-const sagaMiddleware = <span class="cstat-no" title="statement not covered" >createSagaMiddleware();</span>
-const INITIAL_STATE = <span class="cstat-no" title="statement not covered" >window.__INITIAL_STATE__ || {};</span>
-const configureStore: (preloadedState?: { [k: string]: any }) =&gt; Store&lt;any&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span></span>
-  preloadedState = <span class="branch-0 cbranch-no" title="branch not covered" >INITIAL_STATE</span>
+const composeEnhancers = composeWithDevTools({});
+const sagaMiddleware = createSagaMiddleware();
+const initialState = window.initialState || {};
+const configureStore: (preloadedState?: { [k: string]: any }) =&gt; Store&lt;any&gt; = (
+  preloadedState: any = initialState
 ) =&gt; {
-  const store = <span class="cstat-no" title="statement not covered" >createStore(</span>
+  const store = createStore(
     createRootReducer(history),
     preloadedState,
     composeEnhancers(applyMiddleware(sagaMiddleware, routerMiddleware(history)))
   );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return store;</span>
+  return store;
 };
 &nbsp;
-const store = <span class="cstat-no" title="statement not covered" >configureStore();</span>
+const store = configureStore();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >sagaMiddleware.run(sagas);</span>
+sagaMiddleware.run(sagas);
 &nbsp;
-export { store, history };
+export { store };
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -150,7 +150,7 @@ export { store, history };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Nov 16 2020 13:04:32 GMT+0200 (Eastern European Standard Time)
+                at Sun Dec 06 2020 17:51:54 GMT+0200 (Eastern European Standard Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

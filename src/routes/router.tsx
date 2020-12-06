@@ -1,17 +1,14 @@
-import { Layouts } from "layouts/consts";
+import { Layouts } from "layouts";
 import { assign, compose, map } from "lodash/fp";
 import React from "react";
 import { Route } from "react-router-dom";
-import { Route as RouteType } from "routes/types";
 import { withIntl } from "services/intl";
-import {
-  withAuthentication,
-  withPermissions,
-} from "services/permission/module";
+import { withAuthentication, withPermissions } from "services/permission";
 import { isAuthenticate } from "store/autheticate/selectors";
 import { loadable } from "utils/loadable";
 
 import { AvailableRoutes } from "./consts";
+import { Route as RouteType } from "./types";
 
 const routesShape: any = {};
 
@@ -71,8 +68,7 @@ const addPermissionWrapper = (route: RouteType): RouteType =>
       });
 
 const buildRouter = map((route: RouteType, ...args: any) => {
-  const { layout = Layouts.EmptyLayout, page: Page, ...rest } = route;
-  const Layout = require("layouts").Layouts[layout]; // eslint-disable-line @typescript-eslint/no-var-requires, global-require
+  const { layout: Layout = Layouts.EmptyLayout, page: Page, ...rest } = route;
 
   return (
     <Route
@@ -90,6 +86,6 @@ const buildRouter = map((route: RouteType, ...args: any) => {
 const getLink = (
   routeName: keyof typeof AvailableRoutes,
   ...args: any[]
-): string => routesShape[routeName].link(...args);
+): string => routesShape[routeName]?.link(...args);
 
 export { buildRouter, extendRoute, getLink, addPermissionWrapper };

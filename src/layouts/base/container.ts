@@ -23,4 +23,4 @@ const wrapper = compose<BaseLayout, any>(
 
 const Container = wrapper(Component);
 
-export { Container };
+export { Container, wrapper };

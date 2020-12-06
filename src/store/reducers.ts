@@ -7,7 +7,7 @@ import { IStoreState } from "./types";
 
 const createRootReducer = (history: History): Reducer<IStoreState> =>
   combineReducers({
-    router: connectRouter(history),
+    router: connectRouter(history || {}),
     ...reducers,
   });
 

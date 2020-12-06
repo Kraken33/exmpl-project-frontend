@@ -3,14 +3,12 @@ import { compose } from "recompose";
 import { reduxForm } from "redux-form";
 import { api } from "services";
 import { withIntl } from "services/intl";
-import { actions } from "store/autheticate";
+import { authenticate } from "store/autheticate";
 import { asyncValidate } from "utils";
 
 import { FormItemNames, FormName } from "./consts";
 import { InnerProps } from "./types";
 import { Component } from "./view";
-
-const { authenticate } = actions;
 
 const mapDispatch2Props: any = {
   authenticate,

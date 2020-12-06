@@ -1,4 +1,3 @@
-import * as actions from "./actions";
-
-export { actions };
+export { fetchLayoutConfig, saveLayoutConfig } from "./actions";
+export * from "./types";
 export { entryReducer } from "./reducers";

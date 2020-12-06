@@ -5,12 +5,12 @@ import { api } from "services";
 import { setPermissions } from "services/permission";
 import { error, redirect } from "utils";
 
-import { actions } from "../preloader";
+import { addPreloader, removePreloader } from "../preloader";
 import { authenticateReceive, ETypes as types } from "./actions";
 
 function* authentication({ type, payload }: PayloadAction<any>): any {
   try {
-    yield put(actions.addPreloader({ preloaderName: type }));
+    yield put(addPreloader({ preloaderName: type }));
     const { permissions, token } = yield call(api.authenticate.login, payload);
     yield call(setPermissions, permissions);
     yield put(authenticateReceive({ permissions, token }));
@@ -18,7 +18,7 @@ function* authentication({ type, payload }: PayloadAction<any>): any {
   } catch (e) {
     error(e);
   } finally {
-    yield put(actions.removePreloader({ preloaderName: type }));
+    yield put(removePreloader({ preloaderName: type }));
   }
 }
 

@@ -1,13 +1,13 @@
 import { flow, map } from "lodash/fp";
 
-import { history } from "./history";
-import * as router from "./router";
+import { addPermissionWrapper, buildRouter, extendRoute } from "./router";
 import { routes } from "./routes-tree";
 
-const routers = router.buildRouter(
-  map(flow(router.extendRoute, router.addPermissionWrapper))(routes)
+const routers = buildRouter(
+  map(flow(extendRoute, addPermissionWrapper))(routes)
 );
 
-export { routers, history, router };
+export { routers };
+export { history } from "./history";
 export { getLink } from "./router";
 export { AvailableRoutes } from "./consts";

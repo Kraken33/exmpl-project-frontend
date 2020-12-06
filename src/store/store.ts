@@ -2,7 +2,7 @@ import { routerMiddleware } from "connected-react-router";
 import { Store, applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
 import createSagaMiddleware from "redux-saga";
-import { history } from "routes/history";
+import { history } from "routes";
 
 import { createRootReducer } from "./reducers";
 import { sagas } from "./sagas";
@@ -26,4 +26,4 @@ const store = configureStore();
 
 sagaMiddleware.run(sagas);
 
-export { store, history };
+export { store };

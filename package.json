@@ -71,7 +71,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:no-interactive": "react-scripts test --watchAll=false",
-    "test:coverage": "react-scripts test --coverage",
+    "test:coverage": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
     "server": "serve -s build -l 4000",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
@@ -129,6 +129,7 @@
       "func-names": "off",
       "no-param-reassign": "off",
       "react/prop-types": "off",
+      "import/first": "off",
       "prettier/prettier": [
         "error",
         {

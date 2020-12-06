@@ -1,14 +1,13 @@
 import * as icons from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import logo from "assets/images/logo.svg";
-import { Breadcrumbs } from "components";
+import Breadcrumbs from "components/breadcrumbs";
 import { APP_NAME } from "consts";
 import dayjs from "dayjs";
 import { map } from "lodash/fp";
 import React from "react";
 import withBreadcrumbs from "react-router-breadcrumbs-hoc";
-import { history } from "routes";
-import * as router from "routes/router";
+import { AvailableRoutes, getLink, history } from "routes";
 
 import styles from "./index.module.scss";
 import { BaseLayout } from "./types";
@@ -27,7 +26,7 @@ const Component: React.FC<BaseLayout> = ({
 
   const ReadyBreadcrumbs = withBreadcrumbs([...preparedRoutesForBreadcrumbs], {
     excludePaths: [],
-  })(Breadcrumbs as React.ComponentType<any>);
+  })(Breadcrumbs as any);
 
   const renderMenu = map(({ label, icon, link }) => {
     // @ts-ignore
@@ -48,7 +47,7 @@ const Component: React.FC<BaseLayout> = ({
       <Sider collapsible collapsed={siderIsOpen} onCollapse={siderToggleState}>
         <div className={styles.logo}>
           <img className={styles.logo_img} src={logo} alt="Main logo" />
-          <a href="/" className={styles.logo_link}>
+          <a href={getLink(AvailableRoutes.home)} className={styles.logo_link}>
             Kraken 33
           </a>
         </div>
@@ -56,9 +55,9 @@ const Component: React.FC<BaseLayout> = ({
           {renderMenu(menu)}
           <Menu.Item
             danger
-            key={router.getLink("api")}
+            key={getLink(AvailableRoutes.api)}
             icon={<icons.CloudDownloadOutlined />}
-            onClick={() => history.push(router.getLink("api"))}
+            onClick={() => history.push(getLink(AvailableRoutes.api))}
           >
             API
           </Menu.Item>

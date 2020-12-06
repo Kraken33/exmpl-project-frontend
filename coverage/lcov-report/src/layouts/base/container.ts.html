@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
@@ -43,9 +43,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -82,8 +82,7 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -92,51 +91,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { compose } from "recompose";
-import { connect } from "react-redux";
-&nbsp;
-import { BaseLayoutComponent } from "./view";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { connect } from "react-redux";
+import { compose } from "recompose";
+import { siderToggleState } from "store/layout/actions";
 import { getLayoutConfig, getSiderState } from "store/layout/selectors";
-import { siderToggleState } from 'store/layout/actions';
-import { MapState2Props, BaseLayout } from "./types";
 import { getLocationPathname } from "store/selectors";
 &nbsp;
-const mapState2Props: MapState2Props = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(s</span>tate)=&gt;(<span class="cstat-no" title="statement not covered" >{</span></span>
-    layoutConfig: getLayoutConfig(state),
-    siderIsOpen: getSiderState(state),
-    pathname: getLocationPathname(state)
+import { BaseLayout, MapState2Props } from "./types";
+import { Component } from "./view";
+&nbsp;
+const mapState2Props: MapState2Props = <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+  layoutConfig: getLayoutConfig(state),
+  siderIsOpen: getSiderState(state),
+  pathname: getLocationPathname(state),
 });
 &nbsp;
-const mapDispatch2Props = <span class="cstat-no" title="statement not covered" >{</span>
-    siderToggleState
+const mapDispatch2Props = {
+  siderToggleState,
 };
 &nbsp;
-const wrapper = <span class="cstat-no" title="statement not covered" >compose&lt;BaseLayout, any&gt;(</span>
-    connect(mapState2Props, mapDispatch2Props)
+const wrapper = compose&lt;BaseLayout, any&gt;(
+  connect(mapState2Props, mapDispatch2Props)
 );
 &nbsp;
+const Container = wrapper(Component);
 &nbsp;
-const BaseLayoutContainer = <span class="cstat-no" title="statement not covered" >wrapper(BaseLayoutComponent);</span>
-&nbsp;
-export { BaseLayoutContainer };
+export { Container, wrapper };
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -144,7 +141,7 @@ export { BaseLayoutContainer };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Nov 16 2020 13:04:32 GMT+0200 (Eastern European Standard Time)
+                at Sun Dec 06 2020 17:51:54 GMT+0200 (Eastern European Standard Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

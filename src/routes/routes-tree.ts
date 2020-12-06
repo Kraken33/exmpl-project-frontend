@@ -1,4 +1,4 @@
-import { Layouts } from "layouts/consts";
+import { Layouts } from "layouts";
 
 import { Routes } from "./types";
 

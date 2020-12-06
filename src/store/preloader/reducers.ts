@@ -26,4 +26,4 @@ const entryReducer = createReducer<any>(initialState, {
   },
 });
 
-export { entryReducer };
+export { entryReducer, initialState };

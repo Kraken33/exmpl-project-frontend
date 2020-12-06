@@ -1,21 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1607192838379" clover="3.2.0">
-  <project timestamp="1607192838379" name="All files">
-    <metrics statements="129" coveredstatements="95" conditionals="28" coveredconditionals="13" methods="52" coveredmethods="29" elements="209" coveredelements="137" complexity="0" loc="129" ncloc="129" packages="12" files="23" classes="23"/>
-    <package name="components">
+<coverage generated="1607269914769" clover="3.2.0">
+  <project timestamp="1607269914769" name="All files">
+    <metrics statements="382" coveredstatements="283" conditionals="145" coveredconditionals="69" methods="138" coveredmethods="91" elements="665" coveredelements="443" complexity="0" loc="382" ncloc="382" packages="32" files="119" classes="119"/>
+    <package name="src">
+      <metrics statements="48" coveredstatements="0" conditionals="32" coveredconditionals="0" methods="18" coveredmethods="0"/>
+      <file name="index.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/index.tsx">
+        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+      </file>
+      <file name="serviceWorker.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/serviceWorker.ts">
+        <metrics statements="40" coveredstatements="0" conditionals="32" coveredconditionals="0" methods="15" coveredmethods="0"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="51" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="61" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="82" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="105" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="108" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="112" count="0" type="stmt"/>
+        <line num="115" count="0" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="118" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
+        <line num="125" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="139" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="140" count="0" type="stmt"/>
+        <line num="141" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/index.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="components.button">
-      <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+    <package name="src.components.app">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="container.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/app/container.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="6" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/app/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/components/app/view.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.breadcrumbs">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+      <file name="container.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/breadcrumbs/container.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="8" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/breadcrumbs/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/breadcrumbs/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/components/breadcrumbs/view.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.button">
+      <metrics statements="7" coveredstatements="6" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="1"/>
       <file name="container.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/button/container.ts">
         <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="8" count="3" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="17" count="3" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/button/index.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -23,17 +115,207 @@
       <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/button/types.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/components/button/view.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
     </package>
-    <package name="pages.api">
-      <metrics statements="26" coveredstatements="18" conditionals="2" coveredconditionals="0" methods="9" coveredmethods="6"/>
+    <package name="src.components.form-controls">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.form-controls.checkbox">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/checkbox/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/checkbox/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/checkbox/view.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.form-controls.code">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/code/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/code/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/code/view.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.form-controls.controler">
+      <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/controler/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/controler/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/controler/view.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="23" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="26" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="29" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.form-controls.input">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/input/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/input/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/input/view.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.form-controls.switch">
+      <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="5" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/switch/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/switch/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-controls/switch/view.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.form-item">
+      <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-item/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-item/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/components/form-item/view.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
+        <line num="7" count="11" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.consts">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="api.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/consts/api.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+      </file>
+      <file name="app-config.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/consts/app-config.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+      </file>
+      <file name="common.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/consts/common.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+      </file>
+      <file name="env.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/consts/env.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/consts/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="typeof.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/consts/typeof.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.layouts">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="consts.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/layouts/consts.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/layouts/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="7" type="stmt"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/layouts/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.layouts.base">
+      <metrics statements="12" coveredstatements="10" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="container.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/layouts/base/container.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="24" count="8" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/layouts/base/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/layouts/base/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/layouts/base/view.tsx">
+        <metrics statements="8" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.layouts.empty">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/layouts/empty/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/layouts/empty/view.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.api">
+      <metrics statements="28" coveredstatements="20" conditionals="2" coveredconditionals="0" methods="9" coveredmethods="6"/>
+      <file name="container.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/api/container.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/api/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
       <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/api/types.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
       <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/api/view.tsx">
         <metrics statements="26" coveredstatements="18" conditionals="2" coveredconditionals="0" methods="9" coveredmethods="6"/>
-        <line num="19" count="3" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
@@ -59,54 +341,160 @@
         <line num="135" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="pages.login">
-      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/login/view.tsx">
-        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
+    <package name="src.pages.home">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="container.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/home/container.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="6" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/home/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/home/view.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="routes">
-      <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+    <package name="src.pages.login">
+      <metrics statements="7" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="consts.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/login/consts.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="6" type="stmt"/>
+      </file>
+      <file name="container.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/login/container.ts">
+        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/login/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/login/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="view.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/pages/login/view.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.routes">
+      <metrics statements="27" coveredstatements="21" conditionals="9" coveredconditionals="6" methods="13" coveredmethods="8"/>
+      <file name="consts.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/routes/consts.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="6" type="stmt"/>
+      </file>
+      <file name="history.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/routes/history.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="6" type="stmt"/>
+      </file>
       <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/routes/index.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="7" count="3" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
       </file>
-      <file name="router.spec__.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/routes/router.spec__.ts">
-        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+      <file name="router.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/routes/router.tsx">
+        <metrics statements="23" coveredstatements="17" conditionals="9" coveredconditionals="6" methods="13" coveredmethods="8"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="21" count="18" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="18" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="18" type="stmt"/>
+        <line num="30" count="7" type="stmt"/>
+        <line num="36" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="40" count="18" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="59" count="18" type="stmt"/>
+        <line num="60" count="18" type="stmt"/>
+        <line num="63" count="7" type="stmt"/>
+        <line num="64" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="73" count="7" type="stmt"/>
+        <line num="74" count="18" type="cond" truecount="0" falsecount="1"/>
+        <line num="76" count="18" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="89" count="7" type="stmt"/>
+        <line num="92" count="2" type="stmt"/>
+      </file>
+      <file name="routes-tree.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/routes/routes-tree.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="6" type="stmt"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/routes/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="services.api">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+    <package name="src.services">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.services.api">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/api/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="6" type="stmt"/>
+      </file>
       <file name="routes.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/api/routes.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
       </file>
       <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/api/types.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="services.http">
+    <package name="src.services.api.account">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/api/account/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="requests.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/api/account/requests.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/api/account/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.services.api.authenticate">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/api/authenticate/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="requests.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/api/authenticate/requests.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/api/authenticate/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.services.http">
       <metrics statements="14" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="3"/>
       <file name="index.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/services/http/index.tsx">
         <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
       </file>
       <file name="interceptor.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/http/interceptor.ts">
         <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
-        <line num="5" count="4" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
@@ -117,18 +505,90 @@
         <line num="17" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="services.permission">
-      <metrics statements="27" coveredstatements="14" conditionals="10" coveredconditionals="0" methods="14" coveredmethods="5"/>
+    <package name="src.services.intl">
+      <metrics statements="46" coveredstatements="43" conditionals="16" coveredconditionals="11" methods="17" coveredmethods="15"/>
+      <file name="actions.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/intl/actions.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="5" count="10" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="consts.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/intl/consts.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="10" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/intl/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="module.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/services/intl/module.tsx">
+        <metrics statements="41" coveredstatements="38" conditionals="16" coveredconditionals="11" methods="15" coveredmethods="13"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="18" count="13" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="45" count="13" type="stmt"/>
+        <line num="48" count="10" type="stmt"/>
+        <line num="54" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="64" count="10" type="stmt"/>
+        <line num="66" count="13" type="stmt"/>
+        <line num="67" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="72" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="73" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="74" count="4" type="stmt"/>
+        <line num="75" count="4" type="stmt"/>
+        <line num="77" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="79" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="87" count="4" type="stmt"/>
+        <line num="90" count="10" type="stmt"/>
+        <line num="96" count="32" type="stmt"/>
+        <line num="97" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="102" count="10" type="stmt"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/intl/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.services.permission">
+      <metrics statements="29" coveredstatements="15" conditionals="10" coveredconditionals="0" methods="15" coveredmethods="5"/>
+      <file name="actions.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/permission/actions.ts">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/services/permission/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
       <file name="module.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/services/permission/module.tsx">
         <metrics statements="27" coveredstatements="14" conditionals="10" coveredconditionals="0" methods="14" coveredmethods="5"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="17" count="3" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
@@ -136,15 +596,15 @@
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
-        <line num="45" count="3" type="stmt"/>
-        <line num="47" count="3" type="stmt"/>
-        <line num="49" count="6" type="stmt"/>
-        <line num="52" count="6" type="stmt"/>
+        <line num="45" count="6" type="stmt"/>
+        <line num="47" count="6" type="stmt"/>
+        <line num="49" count="12" type="stmt"/>
+        <line num="52" count="12" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
         <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="57" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="61" count="3" type="stmt"/>
-        <line num="64" count="6" type="stmt"/>
+        <line num="61" count="6" type="stmt"/>
+        <line num="64" count="12" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
         <line num="66" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="72" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -153,58 +613,203 @@
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="store.autheticate">
-      <metrics statements="12" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+    <package name="src.store">
+      <metrics statements="15" coveredstatements="15" conditionals="5" coveredconditionals="4" methods="4" coveredmethods="4"/>
+      <file name="export-reducers.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/export-reducers.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="export-sagas.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/export-sagas.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="reducers.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/reducers.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+      </file>
+      <file name="sagas.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/sagas.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="6" count="6" type="stmt"/>
+      </file>
+      <file name="selectors.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/selectors.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+      </file>
+      <file name="store.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/store.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="12" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.store.autheticate">
+      <metrics statements="20" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="actions.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/autheticate/actions.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/autheticate/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="reducers.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/autheticate/reducers.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
       <file name="sagas.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/autheticate/sagas.ts">
         <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="12" count="7" type="stmt"/>
-        <line num="13" count="7" type="stmt"/>
-        <line num="14" count="7" type="stmt"/>
-        <line num="15" count="7" type="stmt"/>
-        <line num="16" count="7" type="stmt"/>
-        <line num="17" count="7" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="21" count="7" type="stmt"/>
-        <line num="26" count="3" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
       </file>
       <file name="selectors.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/autheticate/selectors.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
       </file>
       <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/autheticate/types.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="store.layout">
-      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="sagas.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/layout/sagas.ts">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+    <package name="src.store.layout">
+      <metrics statements="13" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="actions.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/layout/actions.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="16" count="10" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/layout/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="reducers.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/layout/reducers.ts">
+        <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+      </file>
+      <file name="selectors.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/layout/selectors.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
+      </file>
+      <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/layout/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="store.preloader">
-      <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+    <package name="src.store.preloader">
+      <metrics statements="17" coveredstatements="16" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="6"/>
+      <file name="actions.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/preloader/actions.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/preloader/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="reducers.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/preloader/reducers.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="25" count="1" type="stmt"/>
+      </file>
       <file name="selectors.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/preloader/selectors.ts">
         <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
         <line num="15" count="3" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="25" count="7" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
       </file>
       <file name="types.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/store/preloader/types.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="utils">
-      <metrics statements="27" coveredstatements="24" conditionals="12" coveredconditionals="9" methods="10" coveredmethods="7"/>
+    <package name="src.utils">
+      <metrics statements="48" coveredstatements="40" conditionals="31" coveredconditionals="22" methods="19" coveredmethods="17"/>
+      <file name="component-test.tsx" path="/home/kraken33/develop/exmpl-project-frontend/src/utils/component-test.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="7" count="26" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+      </file>
+      <file name="errors.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/utils/errors.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="5" count="10" type="stmt"/>
+        <line num="6" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/utils/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="loadable.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/utils/loadable.ts">
+        <metrics statements="10" coveredstatements="4" conditionals="9" coveredconditionals="3" methods="2" coveredmethods="1"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="18" count="18" type="stmt"/>
+        <line num="19" count="18" type="stmt"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+      </file>
+      <file name="location.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/utils/location.ts">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="pub-sub.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/utils/pub-sub.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="8" coveredconditionals="8" methods="5" coveredmethods="5"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="17" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="27" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="2" type="stmt"/>
+      </file>
       <file name="redux-form-validation.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/utils/redux-form-validation.ts">
-        <metrics statements="23" coveredstatements="22" conditionals="12" coveredconditionals="9" methods="6" coveredmethods="6"/>
-        <line num="7" count="4" type="stmt"/>
+        <metrics statements="22" coveredstatements="21" conditionals="12" coveredconditionals="9" methods="6" coveredmethods="6"/>
+        <line num="7" count="7" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
         <line num="9" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="10" count="3" type="cond" truecount="1" falsecount="1"/>
@@ -214,26 +819,22 @@
         <line num="15" count="3" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="27" count="4" type="stmt"/>
-        <line num="35" count="5" type="stmt"/>
+        <line num="27" count="7" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
         <line num="36" count="2" type="stmt"/>
         <line num="40" count="2" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="44" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="41" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
         <line num="45" count="2" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
-        <line num="48" count="2" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="53" count="2" type="stmt"/>
-        <line num="55" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="52" count="2" type="cond" truecount="2" falsecount="0"/>
       </file>
       <file name="test.ts" path="/home/kraken33/develop/exmpl-project-frontend/src/utils/test.ts">
-        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="5" count="5" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="8" type="stmt"/>
       </file>
     </package>
   </project>

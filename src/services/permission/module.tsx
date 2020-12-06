@@ -2,9 +2,8 @@ import { EventEmitter } from "events";
 
 import React, { useContext, useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { AvailableRoutes } from "routes";
-import { redirect } from "utils";
 import { error } from "utils/errors";
+import { redirect } from "utils/location";
 
 import { WithAuthenticationOptions, WithPerrmissionOptions } from "./types";
 
@@ -52,7 +51,7 @@ const withAuthentication = ({
   connect((state) => ({ isAuthenticate: authenticateSelector(state) }))(
     ({ isAuthenticate }) => {
       useEffect(() => {
-        !isAuthenticate && redirect(AvailableRoutes.login);
+        !isAuthenticate && redirect("login");
       }, [isAuthenticate]);
       return isAuthenticate ? <Component /> : <span>401</span>;
     }

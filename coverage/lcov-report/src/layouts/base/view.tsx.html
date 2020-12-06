@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/10</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/10</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
@@ -126,7 +126,19 @@
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -139,9 +151,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,7 +174,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,7 +195,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -199,19 +223,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as icons from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import logo from "assets/images/logo.svg";
-import { Breadcrumbs } from "components";
+import Breadcrumbs from "components/breadcrumbs";
 import { APP_NAME } from "consts";
 import dayjs from "dayjs";
 import { map } from "lodash/fp";
 import React from "react";
 import withBreadcrumbs from "react-router-breadcrumbs-hoc";
+// import { AvailableRoutes } from "routes";
+// import { history } from "routes/history";
+// import { getLink } from "routes/router";
 &nbsp;
+import styles from "./index.module.scss";
 import { BaseLayout } from "./types";
-import { routes, history } from "routes";
 &nbsp;
 const { Header, Content, Footer, Sider } = Layout;
 &nbsp;
-const BaseLayoutComponent: React.FC&lt;BaseLayout&gt; = ({
+const Component: React.FC&lt;BaseLayout&gt; = ({
   children,
   pathname,
   layoutConfig,
@@ -221,43 +248,52 @@ const BaseLayoutComponent: React.FC&lt;BaseLayout&gt; = ({
 }) =&gt; {
   const { menu } = layoutConfig;
 &nbsp;
-  const ReadyBreadcrumbs = withBreadcrumbs(preparedRoutesForBreadcrumbs, {
+  const ReadyBreadcrumbs = withBreadcrumbs([...preparedRoutesForBreadcrumbs], {
     excludePaths: [],
-  })(Breadcrumbs as React.ComponentType&lt;any&gt;);
+  })(Breadcrumbs as any);
 &nbsp;
   const renderMenu = map(<span class="fstat-no" title="function not covered" >({</span> label, icon, link }) =&gt; {
     // @ts-ignore
     const Icon = <span class="cstat-no" title="statement not covered" >icons[icon];</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-      &lt;Menu.Item key={link} icon={icon ? &lt;Icon /&gt; : null} onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;<span class="cstat-no" title="statement not covered" >history.push(link)}</span>&gt;
+      &lt;Menu.Item
+        key={link}
+        icon={icon ? &lt;Icon /&gt; : null}
+        // onClick={() =&gt; history.push(link)}
+      &gt;
         {label}
       &lt;/Menu.Item&gt;
     );
   });
 &nbsp;
   return (
-    &lt;Layout style={{ minHeight: "100vh" }}&gt;
+    &lt;Layout className={styles.layout}&gt;
       &lt;Sider collapsible collapsed={siderIsOpen} onCollapse={siderToggleState}&gt;
-        &lt;div className="logo"&gt;
-          &lt;img className="logo__img" src={logo} alt="Main logo" /&gt;
-          &lt;a href={"/"} className="logo__link"&gt;
+        &lt;div className={styles.logo}&gt;
+          &lt;img className={styles.logo_img} src={logo} alt="Main logo" /&gt;
+          &lt;a href="/" className={styles.logo_link}&gt;
             Kraken 33
           &lt;/a&gt;
         &lt;/div&gt;
         &lt;Menu theme="dark" defaultSelectedKeys={[pathname]} mode="inline"&gt;
           {renderMenu(menu)}
-          &lt;Menu.Item danger key={routes.api.link()} icon={&lt;icons.CloudDownloadOutlined /&gt;} onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;<span class="cstat-no" title="statement not covered" >history.push(routes.api.link())}</span>&gt;
+          &lt;Menu.Item
+            danger
+            key={'/api'}
+            icon={&lt;icons.CloudDownloadOutlined /&gt;}
+            // onClick={() =&gt; history.push('/api')}
+          &gt;
             API
           &lt;/Menu.Item&gt;
         &lt;/Menu&gt;
       &lt;/Sider&gt;
-      &lt;Layout className="site-layout"&gt;
+      &lt;Layout&gt;
         &lt;Header /&gt;
-        &lt;Content style={{ margin: "0 16px" }}&gt;
+        &lt;Content className={styles.content}&gt;
           &lt;ReadyBreadcrumbs /&gt;
-          &lt;div className="site-layout-background"&gt;{children}&lt;/div&gt;
+          &lt;div className={styles.site_layout_background}&gt;{children}&lt;/div&gt;
         &lt;/Content&gt;
-        &lt;Footer style={{ textAlign: "center" }}&gt;
+        &lt;Footer className={styles.footer}&gt;
           {APP_NAME} ©{dayjs().year()} Created by &lt;a href="/"&gt;kraken33&lt;/a&gt;
         &lt;/Footer&gt;
       &lt;/Layout&gt;
@@ -265,7 +301,7 @@ const BaseLayoutComponent: React.FC&lt;BaseLayout&gt; = ({
   );
 };
 &nbsp;
-export { BaseLayoutComponent };
+export { Component };
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -273,7 +309,7 @@ export { BaseLayoutComponent };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Nov 16 2020 13:04:32 GMT+0200 (Eastern European Standard Time)
+                at Sun Dec 06 2020 17:51:54 GMT+0200 (Eastern European Standard Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

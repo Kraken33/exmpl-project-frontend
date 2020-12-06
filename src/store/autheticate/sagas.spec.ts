@@ -3,7 +3,7 @@ import { runSaga } from "redux-saga";
 import { AvailableRoutes } from "routes";
 import { api } from "services";
 import * as permissionActions from "services/permission/actions";
-import { actions } from "store/preloader";
+import { addPreloader, removePreloader } from "store/preloader";
 import * as location from "utils/location";
 
 import { authenticateReceive } from "./actions";
@@ -36,16 +36,12 @@ describe("testing authenticate saga", () => {
 
   it("should add preloader", async () => {
     await resolveSaga();
-    expect(head(dispatched)).toEqual(
-      actions.addPreloader({ preloaderName: type })
-    );
+    expect(head(dispatched)).toEqual(addPreloader({ preloaderName: type }));
   });
 
   it("should remove preloader", async () => {
     await resolveSaga();
-    expect(last(dispatched)).toEqual(
-      actions.removePreloader({ preloaderName: type })
-    );
+    expect(last(dispatched)).toEqual(removePreloader({ preloaderName: type }));
   });
 
   it("call login request", async () => {
