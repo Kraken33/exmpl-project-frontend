@@ -1,2 +1,0 @@
-(this["webpackJsonpexmple-project"]=this["webpackJsonpexmple-project"]||[]).push([[8],{597:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return a}));var r=n(0),c=n.n(r),p=n(75),a=function(){var e=Object(p.d)().testKey;return c.a.createElement("div",null,"React Typescript boilerplate ",e)}}}]);
-//# sourceMappingURL=8.5cac3645.chunk.js.map
